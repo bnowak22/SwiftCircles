@@ -10,8 +10,10 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var totalFrames = 0
     var currentFrames = 0
-    var drawFrames = 60
+    var initialDrawFrames = 120
+    var drawFrames = 0
     var shouldDrawCircle = true
     
     override func didMoveToView(view: SKView) {
@@ -30,6 +32,8 @@ class GameScene: SKScene {
         
 //        for touch in (touches as! Set<UITouch>) {
 //            let location = touch.locationInNode(self)
+//            
+//            println(location)
 //            
 //            let sprite = SKSpriteNode(imageNamed:"Spaceship")
 //            
@@ -50,12 +54,22 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
+        totalFrames++
         currentFrames++
         
-        if (currentFrames == drawFrames) {
-            drawCircle()
-            currentFrames = 0
+        if (drawFrames == 0) {
+            if (currentFrames == initialDrawFrames) {
+                currentFrames = 0
+                drawCircle()
+            }
         }
+        else {
+            if (currentFrames == drawFrames) {
+                currentFrames = 0
+                drawCircle()
+            }
+        }
+        
         
     }
     
@@ -68,8 +82,7 @@ class GameScene: SKScene {
         newCircle.fillColor = SKColor.orangeColor()
         
         //calculate random x and y for circle position
-        //newCircle.position = randomCoords()
-        newCircle.position = CGPointMake(CGFloat(0), CGFloat(0))
+        newCircle.position = randomCoords()
         
         //add circle
         self.addChild(newCircle)
@@ -77,13 +90,21 @@ class GameScene: SKScene {
     
     func randomCoords() -> CGPoint {
         
-        let xBound = Int(self.frame.width) - (2*CIRCLE_RADIUS)
-        let yBound = Int(self.frame.height) - (2*CIRCLE_RADIUS)
+        var viewWidth = UIScreen.mainScreen().bounds.width
+        var viewHeight = UIScreen.mainScreen().bounds.height
+        
+        let xBound = Int(viewWidth) - (2*CIRCLE_RADIUS)
+        let yBound = Int(viewHeight) - (2*CIRCLE_RADIUS)
         
         let x = Int(arc4random_uniform(UInt32(xBound))) + CIRCLE_RADIUS
         let y = Int(arc4random_uniform(UInt32(yBound))) + CIRCLE_RADIUS
         
         let circlePos = CGPointMake(CGFloat(x), CGFloat(y))
         return circlePos
+    }
+    
+    func randomDrawFrames() {
+        //need more logic in here to scale this based on passed frames (shorter as game goes on)
+        drawFrames = Int(arc4random_uniform(300)) + 60
     }
 }

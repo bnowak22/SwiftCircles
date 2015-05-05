@@ -10,30 +10,49 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class GameCircle {
+class GameCircle: SKShapeNode {
     
-    var mainCircle: SKShapeNode = SKShapeNode(circleOfRadius: 0)
+    //create inner circle
     var innerCircle: SKShapeNode = SKShapeNode(circleOfRadius: 0)
-    var randomPosition: CGPoint = CGPoint(x: 0, y: 0)
     
-    func initWithRadius(radius: Int) {
+    //collision bitmasks
+    let mainCircleCategory:UInt32 = 0x1 << 0
+    
+    //create expanding bool
+    var shouldExpand = false
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(circleOfRadius: CGFloat) {
+        
+        super.init()
+        
+        //enable touches
+        self.userInteractionEnabled = true
     
         //set up circle sizes
-        self.mainCircle = SKShapeNode(circleOfRadius: CGFloat(radius))
+        self.innerCircle = SKShapeNode(circleOfRadius: circleOfRadius)
+        self.path = innerCircle.path
         self.innerCircle = SKShapeNode(circleOfRadius: 0)
         
         //set up position
-        self.randomPosition = randomCoords()
-        self.mainCircle.position = self.randomPosition
-        self.innerCircle.position = self.randomPosition
+        self.position = randomCoords()
+        self.innerCircle.position = self.position
+        
+        //set up collision bitmasks
+        self.physicsBody = SKPhysicsBody(circleOfRadius: circleOfRadius, center: self.position)
+        self.physicsBody?.categoryBitMask = self.mainCircleCategory
+        self.physicsBody?.contactTestBitMask = self.mainCircleCategory
         
         //set other attributes
-        self.mainCircle.strokeColor = SKColor.blackColor()
+        self.strokeColor = SKColor.blackColor()
         self.innerCircle.strokeColor = SKColor.blackColor()
-        self.mainCircle.glowWidth = 1.0
+        self.glowWidth = 1.0
         self.innerCircle.glowWidth = 1.0
         
-        self.mainCircle.fillColor = SKColor.blueColor()
+        self.fillColor = SKColor.blueColor()
         self.innerCircle.fillColor = SKColor.orangeColor()
     }
     
@@ -52,4 +71,20 @@ class GameCircle {
         return circlePos
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        /* Called when a touch begins */
+        
+        for touch in (touches as! Set<UITouch>) {
+            self.shouldExpand = true
+            var gameParent: GameScene = self.scene as! GameScene
+            gameParent.expandCircle(self)
+        }
+    }
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touch in (touches as! Set<UITouch>) {
+            println("Touch ended!")
+            self.shouldExpand = false
+        }
+    }
 }

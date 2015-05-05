@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var totalFrames = 0
     var currentFrames = 0
@@ -25,6 +25,12 @@ class GameScene: SKScene {
         scoreLabel.fontSize = 36;
         scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 40)
         self.addChild(scoreLabel)
+        
+        //remove gravity
+        self.physicsWorld.gravity = CGVectorMake(0, 0)
+        
+        //set contact delegate
+        self.physicsWorld.contactDelegate = self
         
     }
     
@@ -60,21 +66,30 @@ class GameScene: SKScene {
         
         if (currentFrames == drawFrames) {
             //reset current frames
-            currentFrames = 0
+            //currentFrames = 0
             
             //init circle
-            var newCircle  = GameCircle()
-            newCircle.initWithRadius(CIRCLE_RADIUS)
+            var newCircle  = GameCircle(circleOfRadius: CGFloat(CIRCLE_RADIUS))
             
             //add circle to array
             circles.append(newCircle)
             
             //add circle to screen
-            self.addChild(newCircle.mainCircle)
+            self.addChild(newCircle)
         }
-
         
-        
+    }
+    
+    
+    //collision
+    func didBeginContact(contact: SKPhysicsContact) {
+        println("collision")
+        //contact.bodyA.node?.removeFromParent()
+    }
+    
+    //resizing of circle
+    func expandCircle(GameCircle) {
+        println("Starting to expand!")
     }
     
     func randomDrawFrames() {

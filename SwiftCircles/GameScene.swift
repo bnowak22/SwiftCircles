@@ -10,6 +10,9 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var scoreLabel = SKLabelNode()
+    var score = 0
+    
     var totalFrames = 0
     var currentFrames = 0
     var drawFrames = 120
@@ -20,8 +23,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
         //set up score label
-        let scoreLabel = SKLabelNode()
-        scoreLabel.text = "0"
+        scoreLabel.text = String(score)
         scoreLabel.fontSize = 36;
         scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 40)
         self.addChild(scoreLabel)
@@ -64,6 +66,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         totalFrames++
         currentFrames++
         
+        //expand circles if we need to
+        for circle in circles {
+            if circle.shouldExpand {
+                //remove and re-draw circle
+                circle.innerCircle.removeFromParent()
+                circle.innerRadius = circle.innerRadius + 0.75 //grow rate
+                
+                //create new circle
+                circle.innerCircle = SKShapeNode(circleOfRadius: CGFloat(circle.innerRadius))
+                circle.innerCircle.position = circle.position
+                circle.innerCircle.strokeColor = SKColor.blackColor()
+                circle.innerCircle.glowWidth = 1.0
+                circle.innerCircle.fillColor = SKColor.orangeColor()
+                
+                //add circle to view
+                self.addChild(circle.innerCircle)
+            }
+        }
+        
+        //draw circle if we need to
         if (currentFrames == drawFrames) {
             //reset current frames
             //currentFrames = 0
@@ -78,6 +100,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(newCircle)
         }
         
+        //update score
+        scoreLabel.text = String(score)
+        
     }
     
     
@@ -88,8 +113,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //resizing of circle
-    func expandCircle(GameCircle) {
+    func expandCircle(newCircle: GameCircle) {
         println("Starting to expand!")
+        self.addChild(newCircle.innerCircle)
     }
     
     func randomDrawFrames() {

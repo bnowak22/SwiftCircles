@@ -12,7 +12,10 @@ import SpriteKit
 
 class GameCircle: SKShapeNode {
     
+    var radius: CGFloat = 0.0
+    
     //create inner circle
+    var innerRadius: CGFloat = 0.0
     var innerCircle: SKShapeNode = SKShapeNode(circleOfRadius: 0)
     
     //collision bitmasks
@@ -29,17 +32,18 @@ class GameCircle: SKShapeNode {
         
         super.init()
         
+        self.radius = circleOfRadius
+        
         //enable touches
         self.userInteractionEnabled = true
     
         //set up circle sizes
         self.innerCircle = SKShapeNode(circleOfRadius: circleOfRadius)
         self.path = innerCircle.path
-        self.innerCircle = SKShapeNode(circleOfRadius: 0)
+        self.innerCircle = SKShapeNode(circleOfRadius: 0.0)
         
         //set up position
         self.position = randomCoords()
-        self.innerCircle.position = self.position
         
         //set up collision bitmasks
         self.physicsBody = SKPhysicsBody(circleOfRadius: circleOfRadius, center: self.position)
@@ -48,12 +52,8 @@ class GameCircle: SKShapeNode {
         
         //set other attributes
         self.strokeColor = SKColor.blackColor()
-        self.innerCircle.strokeColor = SKColor.blackColor()
         self.glowWidth = 1.0
-        self.innerCircle.glowWidth = 1.0
-        
         self.fillColor = SKColor.blueColor()
-        self.innerCircle.fillColor = SKColor.orangeColor()
     }
     
     func randomCoords() -> CGPoint {
@@ -85,6 +85,14 @@ class GameCircle: SKShapeNode {
         for touch in (touches as! Set<UITouch>) {
             println("Touch ended!")
             self.shouldExpand = false
+            
+            //calculate radius difference for score
+            var points = Int(floor(abs(self.radius - self.innerRadius)))
+            
+            //update score
+            var gameParent: GameScene = self.scene as! GameScene
+            gameParent.score = gameParent.score + points
+            
         }
     }
 }

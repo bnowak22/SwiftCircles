@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //set up score label
         scoreLabel.text = String(circleScore)
         scoreLabel.fontSize = 36;
-        scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 30)
+        scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 35)
         self.addChild(scoreLabel)
         
         //set up progress bar
@@ -70,6 +70,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //add circle to view
                 self.addChild(circle.innerCircle)
             }
+            else {
+                //fill up bar during idle play
+                delta = delta + TIME_PENALTY
+                progressBar.setProgress(CGFloat(delta/100))
+            }
         }
         
         //draw circle if we need to
@@ -92,6 +97,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         progressBar.setProgress(CGFloat(delta/100))
         scoreLabel.text = String(circleScore)
         
+        //check for end game
+        if (delta > 100) {
+            shouldDrawCircle = false
+            self.removeAllChildren()
+            endGame()
+        }
+        
+    }
+    
+    func endGame() {
+        //display score and hiscore
+        
+        //navigate back to home page
+        
+        //ad??? :D
     }
     
     //collision

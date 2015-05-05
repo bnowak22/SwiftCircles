@@ -111,6 +111,9 @@ class GameCircle: SKShapeNode {
             self.innerCircle.removeFromParent()
             self.removeFromParent()
             
+            //remove circle from circles array
+            gameParent.circles.removeLast()
+            
             //let parent know to draw another circle
             gameParent.shouldDrawCircle = true
             

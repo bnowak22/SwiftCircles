@@ -12,26 +12,29 @@ import SpriteKit
 
 class GameCircle: SKShapeNode {
     
+    //this circle's radius
     var radius: CGFloat = 0.0
     
     //create inner circle
     var innerRadius: CGFloat = 0.0
     var innerCircle: SKShapeNode = SKShapeNode(circleOfRadius: 0)
     
-    //collision bitmasks
+    //collision bitmask
     let mainCircleCategory:UInt32 = 0x1 << 0
     
-    //create expanding bool
+    //expanding bool
     var shouldExpand = false
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //custom init
     init(circleOfRadius: CGFloat) {
         
         super.init()
         
+        //set radius
         self.radius = circleOfRadius
         
         //enable touches
@@ -52,10 +55,11 @@ class GameCircle: SKShapeNode {
         
         //set other attributes
         self.strokeColor = SKColor.blackColor()
-        self.glowWidth = 1.0
-        self.fillColor = SKColor.blueColor()
+        self.glowWidth = 0.25
+        self.fillColor = UIColor(red: 175/255, green: 158/255, blue: 217/255, alpha: 1.0)
     }
     
+    //get random coordinates on screen
     func randomCoords() -> CGPoint {
         
         var viewWidth = UIScreen.mainScreen().bounds.width
@@ -87,11 +91,18 @@ class GameCircle: SKShapeNode {
             self.shouldExpand = false
             
             //calculate radius difference for score
-            var points = Int(floor(abs(self.radius - self.innerRadius)))
+            var points = abs(self.radius - self.innerRadius)
             
             //update score
             var gameParent: GameScene = self.scene as! GameScene
-            gameParent.score = gameParent.score + points
+            gameParent.score = gameParent.score + Double(points)
+            
+            //remove circle from screen
+            self.innerCircle.removeFromParent()
+            self.removeFromParent()
+            
+            //let parent know to draw another circle
+            gameParent.shouldDrawCircle = true
             
         }
     }

@@ -10,20 +10,26 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    //scoring
     var scoreLabel = SKLabelNode()
-    var score = 0
+    var score = 0.0
     
+    //timing/drawing circles
     var totalFrames = 0
     var currentFrames = 0
     var drawFrames = 120
     var shouldDrawCircle = true
     
+    //keeping track of circles on screen
     var circles = [GameCircle]()
     
     override func didMoveToView(view: SKView) {
         
+        //set background color
+        backgroundColor = UIColor(red: 66/255, green: 235/255, blue: 218/255, alpha: 1.0)
+        
         //set up score label
-        scoreLabel.text = String(score)
+        scoreLabel.text = NSString(format: "%.2f", score) as String
         scoreLabel.fontSize = 36;
         scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 40)
         self.addChild(scoreLabel)
@@ -33,30 +39,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //set contact delegate
         self.physicsWorld.contactDelegate = self
-        
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
-//        for touch in (touches as! Set<UITouch>) {
-//            let location = touch.locationInNode(self)
-//            
-//            println(location)
-//            
-//            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-//            
-//            sprite.xScale = 0.5
-//            sprite.yScale = 0.5
-//            sprite.position = location
-//            
-//            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-//            
-//            sprite.runAction(SKAction.repeatActionForever(action))
-//            
-//            self.addChild(sprite)
-//        }
-        
         
     }
    
@@ -77,8 +59,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 circle.innerCircle = SKShapeNode(circleOfRadius: CGFloat(circle.innerRadius))
                 circle.innerCircle.position = circle.position
                 circle.innerCircle.strokeColor = SKColor.blackColor()
-                circle.innerCircle.glowWidth = 1.0
-                circle.innerCircle.fillColor = SKColor.orangeColor()
+                circle.innerCircle.glowWidth = 0.25
+                circle.innerCircle.fillColor = UIColor(red: 7/255, green: 242/255, blue: 70/255, alpha: 1.0)
                 
                 //add circle to view
                 self.addChild(circle.innerCircle)
@@ -86,9 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //draw circle if we need to
-        if (currentFrames == drawFrames) {
-            //reset current frames
-            //currentFrames = 0
+        if (shouldDrawCircle) {
             
             //init circle
             var newCircle  = GameCircle(circleOfRadius: CGFloat(CIRCLE_RADIUS))
@@ -98,10 +78,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             //add circle to screen
             self.addChild(newCircle)
+            
+            shouldDrawCircle = false
         }
         
         //update score
-        scoreLabel.text = String(score)
+        scoreLabel.text = String(format: "%.1f", score)
         
     }
     

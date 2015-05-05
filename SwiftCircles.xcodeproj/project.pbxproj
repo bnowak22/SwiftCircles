@@ -18,6 +18,7 @@
 		8720147B1AEEC524003F15A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720147A1AEEC524003F15A6 /* Constants.swift */; };
 		876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FC1AF8F3A800B91ECF /* GameCircle.swift */; };
 		876D20FF1AF9480D00B91ECF /* CirclesProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */; };
+		876D21041AF958DD00B91ECF /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D21031AF958DD00B91ECF /* EndGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		8720147A1AEEC524003F15A6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		876D20FC1AF8F3A800B91ECF /* GameCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
 		876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesProgressBar.swift; sourceTree = "<group>"; };
+		876D21031AF958DD00B91ECF /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +93,7 @@
 				8720145D1AEEC4C7003F15A6 /* Main.storyboard */,
 				872014551AEEC4C7003F15A6 /* AppDelegate.swift */,
 				872014571AEEC4C7003F15A6 /* GameScene.sks */,
-				872014591AEEC4C7003F15A6 /* GameScene.swift */,
-				8720145B1AEEC4C7003F15A6 /* GameViewController.swift */,
+				876D21021AF958B100B91ECF /* Views */,
 				876D20FB1AF8F38100B91ECF /* Classes */,
 				872014791AEEC4FA003F15A6 /* Utilities */,
 				872014601AEEC4C7003F15A6 /* Images.xcassets */,
@@ -141,6 +142,16 @@
 				876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		876D21021AF958B100B91ECF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8720145B1AEEC4C7003F15A6 /* GameViewController.swift */,
+				872014591AEEC4C7003F15A6 /* GameScene.swift */,
+				876D21031AF958DD00B91ECF /* EndGameViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 				876D20FF1AF9480D00B91ECF /* CirclesProgressBar.swift in Sources */,
 				872014561AEEC4C7003F15A6 /* AppDelegate.swift in Sources */,
 				8720147B1AEEC524003F15A6 /* Constants.swift in Sources */,
+				876D21041AF958DD00B91ECF /* EndGameViewController.swift in Sources */,
 				876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

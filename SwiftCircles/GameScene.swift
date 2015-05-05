@@ -10,13 +10,18 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    //get view controller
+    var viewController: GameViewController?
+    
     //scoring
     var scoreLabel = SKLabelNode()
     var deltaLabel = SKLabelNode()
     var delta = 0.0
     var circleScore = 0
-    
     var progressBar = CirclesProgressBar()
+
+    //hiscore support
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     //toggle to draw circle
     var shouldDrawCircle = true
@@ -99,6 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //check for end game
         if (delta > 100) {
+            self.scene!.view?.paused = true
             shouldDrawCircle = false
             self.removeAllChildren()
             endGame()
@@ -107,11 +113,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
-        //display score and hiscore
+        //get score and hiscore
+        if var hiScore = defaults.stringForKey(HI_SCORE_KEY) {
+            if circleScore > hiScore.toInt() {
+                defaults.setObject(String(format: "%i", circleScore), forKey: HI_SCORE_KEY)
+            }
+            else {
+                //leave hi score as is
+            }
+        }
+        else {
+            defaults.setObject(String(format: "%i", circleScore), forKey: HI_SCORE_KEY)
+        }
         
-        //navigate back to home page
-        
-        //ad??? :D
+        //display results page
+        //self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)
     }
     
     //collision

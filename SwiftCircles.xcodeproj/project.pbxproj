@@ -16,6 +16,7 @@
 		872014641AEEC4C7003F15A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872014621AEEC4C7003F15A6 /* LaunchScreen.xib */; };
 		872014701AEEC4C7003F15A6 /* SwiftCirclesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720146F1AEEC4C7003F15A6 /* SwiftCirclesTests.swift */; };
 		8720147B1AEEC524003F15A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720147A1AEEC524003F15A6 /* Constants.swift */; };
+		876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FC1AF8F3A800B91ECF /* GameCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		8720146E1AEEC4C7003F15A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8720146F1AEEC4C7003F15A6 /* SwiftCirclesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCirclesTests.swift; sourceTree = "<group>"; };
 		8720147A1AEEC524003F15A6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		876D20FC1AF8F3A800B91ECF /* GameCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +91,9 @@
 				872014571AEEC4C7003F15A6 /* GameScene.sks */,
 				872014591AEEC4C7003F15A6 /* GameScene.swift */,
 				8720145B1AEEC4C7003F15A6 /* GameViewController.swift */,
-				872014601AEEC4C7003F15A6 /* Images.xcassets */,
+				876D20FB1AF8F38100B91ECF /* Classes */,
 				872014791AEEC4FA003F15A6 /* Utilities */,
+				872014601AEEC4C7003F15A6 /* Images.xcassets */,
 				872014531AEEC4C7003F15A6 /* Supporting Files */,
 			);
 			path = SwiftCircles;
@@ -127,6 +130,14 @@
 				8720147A1AEEC524003F15A6 /* Constants.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		876D20FB1AF8F38100B91ECF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				876D20FC1AF8F3A800B91ECF /* GameCircle.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 				8720145C1AEEC4C7003F15A6 /* GameViewController.swift in Sources */,
 				872014561AEEC4C7003F15A6 /* AppDelegate.swift in Sources */,
 				8720147B1AEEC524003F15A6 /* Constants.swift in Sources */,
+				876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +443,7 @@
 				872014751AEEC4C7003F15A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		872014761AEEC4C7003F15A6 /* Build configuration list for PBXNativeTarget "SwiftCirclesTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +452,7 @@
 				872014781AEEC4C7003F15A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

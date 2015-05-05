@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftCircles/GameScene.swift"
-            timestampString = "452462148.335035"
+            filePath = "SwiftCircles/GameCircle.swift"
+            timestampString = "452524773.731364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "randomCoords()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "initWithRadius(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -53,7 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if circle.shouldExpand {
                 //remove and re-draw circle
                 circle.innerCircle.removeFromParent()
-                circle.innerRadius = circle.innerRadius + 0.75 //grow rate
+                circle.innerRadius = circle.innerRadius + CGFloat(circle.growRate) //grow rate
                 
                 //create new circle
                 circle.innerCircle = SKShapeNode(circleOfRadius: CGFloat(circle.innerRadius))
@@ -71,7 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (shouldDrawCircle) {
             
             //init circle
-            var newCircle  = GameCircle(circleOfRadius: CGFloat(CIRCLE_RADIUS))
+            var newCircle  = GameCircle()
             
             //add circle to array
             circles.append(newCircle)
@@ -98,10 +98,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func expandCircle(newCircle: GameCircle) {
         println("Starting to expand!")
         self.addChild(newCircle.innerCircle)
-    }
-    
-    func randomDrawFrames() {
-        //need more logic in here to scale this based on passed frames (shorter as game goes on)
-        self.drawFrames = Int(arc4random_uniform(300)) + 60
     }
 }

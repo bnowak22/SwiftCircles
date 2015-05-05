@@ -24,24 +24,26 @@ class GameCircle: SKShapeNode {
     
     //expanding bool
     var shouldExpand = false
+    var growRate: CGFloat = 1.0
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //custom init
-    init(circleOfRadius: CGFloat) {
+    override init() {
         
         super.init()
         
         //set radius
-        self.radius = circleOfRadius
+        
+        self.radius = randomBetweenNumbers(20, secondNum: 120)
         
         //enable touches
         self.userInteractionEnabled = true
     
         //set up circle sizes
-        self.innerCircle = SKShapeNode(circleOfRadius: circleOfRadius)
+        self.innerCircle = SKShapeNode(circleOfRadius: self.radius)
         self.path = innerCircle.path
         self.innerCircle = SKShapeNode(circleOfRadius: 0.0)
         
@@ -49,7 +51,7 @@ class GameCircle: SKShapeNode {
         self.position = randomCoords()
         
         //set up collision bitmasks
-        self.physicsBody = SKPhysicsBody(circleOfRadius: circleOfRadius, center: self.position)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.radius, center: self.position)
         self.physicsBody?.categoryBitMask = self.mainCircleCategory
         self.physicsBody?.contactTestBitMask = self.mainCircleCategory
         
@@ -57,6 +59,9 @@ class GameCircle: SKShapeNode {
         self.strokeColor = SKColor.blackColor()
         self.glowWidth = 0.25
         self.fillColor = UIColor(red: 175/255, green: 158/255, blue: 217/255, alpha: 1.0)
+        
+        //calculate random grow rate
+        self.growRate = randomBetweenNumbers(0.5, secondNum: 2.0)
     }
     
     //get random coordinates on screen
@@ -65,14 +70,19 @@ class GameCircle: SKShapeNode {
         var viewWidth = UIScreen.mainScreen().bounds.width
         var viewHeight = UIScreen.mainScreen().bounds.height
         
-        let xBound = Int(viewWidth) - (2*CIRCLE_RADIUS)
-        let yBound = Int(viewHeight) - (2*CIRCLE_RADIUS)
+        let xBound = viewWidth - (2*self.radius)
+        let yBound = viewHeight - (2*self.radius)
         
-        let x = Int(arc4random_uniform(UInt32(xBound))) + CIRCLE_RADIUS
-        let y = Int(arc4random_uniform(UInt32(yBound))) + CIRCLE_RADIUS
+        let x = randomBetweenNumbers(self.radius, secondNum: xBound)
+        let y = randomBetweenNumbers(self.radius, secondNum: yBound)
         
         let circlePos = CGPointMake(CGFloat(x), CGFloat(y))
         return circlePos
+    }
+    
+    //random decimal in ranges
+    func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {

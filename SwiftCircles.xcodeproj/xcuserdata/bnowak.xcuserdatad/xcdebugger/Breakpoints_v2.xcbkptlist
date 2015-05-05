@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftCircles/GameScene.swift"
-            timestampString = "452537326.25677"
+            timestampString = "452545910.836746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "update(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftCircles/GameScene.swift"
-            timestampString = "452537326.25677"
+            timestampString = "452545910.836746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "update(_:)"
             landmarkType = "5">
          </BreakpointContent>

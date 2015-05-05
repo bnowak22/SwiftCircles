@@ -37,7 +37,7 @@ class GameCircle: SKShapeNode {
         
         //set radius
         
-        self.radius = randomBetweenNumbers(20, secondNum: 120)
+        self.radius = randomBetweenNumbers(CGFloat(MIN_CIRCLE_RADIUS), secondNum: CGFloat(MAX_CIRCLE_RADIUS))
         
         //enable touches
         self.userInteractionEnabled = true
@@ -56,12 +56,12 @@ class GameCircle: SKShapeNode {
         self.physicsBody?.contactTestBitMask = self.mainCircleCategory
         
         //set other attributes
-        self.strokeColor = SKColor.blackColor()
+        self.strokeColor = SKColor.whiteColor()
         self.glowWidth = 0.25
-        self.fillColor = UIColor(red: 175/255, green: 158/255, blue: 217/255, alpha: 1.0)
+        self.fillColor = CIRCLE_MAIN_COLOR
         
         //calculate random grow rate
-        self.growRate = randomBetweenNumbers(0.5, secondNum: 2.0)
+        self.growRate = randomBetweenNumbers(CGFloat(MIN_GROW_RATE), secondNum: CGFloat(MAX_GROW_RATE))
     }
     
     //get random coordinates on screen
@@ -71,7 +71,7 @@ class GameCircle: SKShapeNode {
         var viewHeight = UIScreen.mainScreen().bounds.height
         
         let xBound = viewWidth - (2*self.radius)
-        let yBound = viewHeight - (2*self.radius)
+        let yBound = viewHeight - (2*self.radius) - 60
         
         let x = randomBetweenNumbers(self.radius, secondNum: xBound)
         let y = randomBetweenNumbers(self.radius, secondNum: yBound)
@@ -91,7 +91,6 @@ class GameCircle: SKShapeNode {
         for touch in (touches as! Set<UITouch>) {
             self.shouldExpand = true
             var gameParent: GameScene = self.scene as! GameScene
-            gameParent.expandCircle(self)
         }
     }
     
@@ -101,11 +100,12 @@ class GameCircle: SKShapeNode {
             self.shouldExpand = false
             
             //calculate radius difference for score
-            var points = abs(self.radius - self.innerRadius)
+            var newDelta = abs(self.radius - self.innerRadius)
             
             //update score
             var gameParent: GameScene = self.scene as! GameScene
-            gameParent.score = gameParent.score + Double(points)
+            gameParent.delta = gameParent.delta + Double(newDelta)
+            gameParent.circleScore = gameParent.circleScore + 1
             
             //remove circle from screen
             self.innerCircle.removeFromParent()

@@ -12,12 +12,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //scoring
     var scoreLabel = SKLabelNode()
-    var score = 0.0
+    var deltaLabel = SKLabelNode()
+    var delta = 0.0
+    var circleScore = 0
     
-    //timing/drawing circles
-    var totalFrames = 0
-    var currentFrames = 0
-    var drawFrames = 120
+    var progressBar = CirclesProgressBar()
+    
+    //toggle to draw circle
     var shouldDrawCircle = true
     
     //keeping track of circles on screen
@@ -26,13 +27,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
         //set background color
-        backgroundColor = UIColor(red: 66/255, green: 235/255, blue: 218/255, alpha: 1.0)
+        backgroundColor = BACKGROUND_COLOR
         
         //set up score label
-        scoreLabel.text = NSString(format: "%.2f", score) as String
+        scoreLabel.text = String(circleScore)
         scoreLabel.fontSize = 36;
-        scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 40)
+        scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 30)
         self.addChild(scoreLabel)
+        
+        //set up progress bar
+        progressBar.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 50)
+        self.addChild(progressBar)
         
         //remove gravity
         self.physicsWorld.gravity = CGVectorMake(0, 0)
@@ -45,22 +50,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
-        totalFrames++
-        currentFrames++
-        
         //expand circles if we need to
         for circle in circles {
             if circle.shouldExpand {
+                
                 //remove and re-draw circle
                 circle.innerCircle.removeFromParent()
-                circle.innerRadius = circle.innerRadius + CGFloat(circle.growRate) //grow rate
+                
+                //increment radius (growth rate)
+                circle.innerRadius = circle.innerRadius + CGFloat(circle.growRate)
                 
                 //create new circle
                 circle.innerCircle = SKShapeNode(circleOfRadius: CGFloat(circle.innerRadius))
                 circle.innerCircle.position = circle.position
-                circle.innerCircle.strokeColor = SKColor.blackColor()
+                circle.innerCircle.strokeColor = SKColor.whiteColor()
                 circle.innerCircle.glowWidth = 0.25
-                circle.innerCircle.fillColor = UIColor(red: 7/255, green: 242/255, blue: 70/255, alpha: 1.0)
+                circle.innerCircle.fillColor = CIRCLE_INNER_COLOR
                 
                 //add circle to view
                 self.addChild(circle.innerCircle)
@@ -83,20 +88,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //update score
-        scoreLabel.text = String(format: "%.1f", score)
+        deltaLabel.text = String(format: "%.1f", delta)
+        progressBar.setProgress(CGFloat(delta/100))
+        scoreLabel.text = String(circleScore)
         
     }
-    
     
     //collision
     func didBeginContact(contact: SKPhysicsContact) {
         println("collision")
-        //contact.bodyA.node?.removeFromParent()
-    }
-    
-    //resizing of circle
-    func expandCircle(newCircle: GameCircle) {
-        println("Starting to expand!")
-        self.addChild(newCircle.innerCircle)
     }
 }

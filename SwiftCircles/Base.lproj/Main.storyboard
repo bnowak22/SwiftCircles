@@ -118,11 +118,12 @@
                         <outlet property="playAgainButton" destination="Zt4-3R-hud" id="b4Q-GG-v8V"/>
                         <outlet property="yourScoreLabel" destination="bAk-jx-tt6" id="w2R-Xg-7uD"/>
                         <outlet property="yourScoreValue" destination="Cd4-ol-FIu" id="nn6-In-HRQ"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="restartGameSegue" id="Rse-en-dyr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s14-X1-5tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="1012"/>
+            <point key="canvasLocation" x="1100" y="298"/>
         </scene>
     </scenes>
 </document>

@@ -96,7 +96,7 @@ class GameCircle: SKShapeNode {
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in (touches as! Set<UITouch>) {
-            println("Touch ended!")
+
             self.shouldExpand = false
             
             //calculate radius difference for score

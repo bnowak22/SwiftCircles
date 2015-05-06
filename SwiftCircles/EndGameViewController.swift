@@ -26,6 +26,8 @@ class EndGameViewController: UIViewController {
         self.view.backgroundColor = BACKGROUND_COLOR
         
         //customize labels
+        
+        //set label values
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let currentScore = defaults.stringForKey(CURRENT_SCORE_KEY) {
@@ -37,12 +39,13 @@ class EndGameViewController: UIViewController {
         }
         
         //customize buttons
-        
+        playAgainButton.addTarget(self, action: "restartGame", forControlEvents: UIControlEvents.TouchUpInside)
         
     }
     
     func restartGame() {
-        
+        println("Reloading game...")
+        self.performSegueWithIdentifier("restartGameSegue", sender: nil)
     }
     
 }

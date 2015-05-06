@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-public let MIN_CIRCLE_RADIUS = 20
-public let MAX_CIRCLE_RADIUS = 100
+public let MIN_CIRCLE_RADIUS = 35
+public let MAX_CIRCLE_RADIUS = 120
 
 public let MIN_GROW_RATE = 0.5
 public let MAX_GROW_RATE = 2.5
 
-public let TIME_PENALTY = 0.0075
+public let TIME_PENALTY = 0.02
 
 public let BACKGROUND_COLOR = UIColor(red: 66/255, green: 235/255, blue: 218/255, alpha: 1.0)
 public let CIRCLE_MAIN_COLOR = UIColor(red: 175/255, green: 158/255, blue: 217/255, alpha: 1.0)

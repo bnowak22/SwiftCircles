@@ -17,9 +17,112 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="Wso-yG-vdb" kind="show" identifier="endGameSegue" id="BWl-Es-fol"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--End Game View Controller-->
+        <scene sceneID="IWw-yw-D11">
+            <objects>
+                <viewController id="Wso-yG-vdb" customClass="EndGameViewController" customModule="SwiftCircles" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UVt-K2-jNt"/>
+                        <viewControllerLayoutGuide type="bottom" id="YA7-v0-jM0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2zy-l5-C6O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd4-ol-FIu">
+                                <rect key="frame" x="243" y="107" width="115" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="IEm-Fg-hiq"/>
+                                    <constraint firstAttribute="width" constant="115" id="ooW-Jc-k9P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X99-F6-4ln">
+                                <rect key="frame" x="173" y="197" width="255" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="1ap-Hp-U7c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjI-Yg-oBk">
+                                <rect key="frame" x="243" y="276" width="115" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="dkn-jQ-ohf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt4-3R-hud">
+                                <rect key="frame" x="241" y="403" width="118" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="1DR-mT-JJ7"/>
+                                    <constraint firstAttribute="height" constant="58" id="CaR-kZ-mmE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcA-rq-Z1A">
+                                <rect key="frame" x="241" y="469" width="118" height="58"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAk-jx-tt6">
+                                <rect key="frame" x="173" y="28" width="255" height="71"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Cd4-ol-FIu" secondAttribute="centerX" constant="-0.5" id="1CB-R9-wXs"/>
+                            <constraint firstItem="bAk-jx-tt6" firstAttribute="top" secondItem="UVt-K2-jNt" secondAttribute="bottom" constant="8" symbolic="YES" id="1hE-Pu-Not"/>
+                            <constraint firstItem="Zt4-3R-hud" firstAttribute="top" secondItem="YjI-Yg-oBk" secondAttribute="bottom" constant="86" id="AZ1-vD-JGt"/>
+                            <constraint firstItem="YA7-v0-jM0" firstAttribute="top" secondItem="AcA-rq-Z1A" secondAttribute="bottom" constant="73" id="C8D-WX-9P9"/>
+                            <constraint firstItem="bAk-jx-tt6" firstAttribute="leading" secondItem="X99-F6-4ln" secondAttribute="leading" id="J8J-gA-uR7"/>
+                            <constraint firstItem="AcA-rq-Z1A" firstAttribute="leading" secondItem="Zt4-3R-hud" secondAttribute="leading" id="Lb4-RC-BWj"/>
+                            <constraint firstItem="bAk-jx-tt6" firstAttribute="trailing" secondItem="X99-F6-4ln" secondAttribute="trailing" id="Nhj-72-BD5"/>
+                            <constraint firstItem="bAk-jx-tt6" firstAttribute="centerX" secondItem="Cd4-ol-FIu" secondAttribute="centerX" id="X39-I4-ql3"/>
+                            <constraint firstItem="YjI-Yg-oBk" firstAttribute="top" secondItem="X99-F6-4ln" secondAttribute="bottom" constant="8" symbolic="YES" id="XnY-Gs-Cln"/>
+                            <constraint firstItem="AcA-rq-Z1A" firstAttribute="trailing" secondItem="Zt4-3R-hud" secondAttribute="trailing" id="cfB-EN-fgp"/>
+                            <constraint firstItem="Cd4-ol-FIu" firstAttribute="top" secondItem="2zy-l5-C6O" secondAttribute="top" constant="107" id="mT5-7r-9h9"/>
+                            <constraint firstAttribute="bottom" secondItem="Zt4-3R-hud" secondAttribute="bottom" constant="139" id="orX-X5-cip"/>
+                            <constraint firstItem="Cd4-ol-FIu" firstAttribute="leading" secondItem="YjI-Yg-oBk" secondAttribute="leading" id="pD1-Zh-F8a"/>
+                            <constraint firstItem="X99-F6-4ln" firstAttribute="top" secondItem="Cd4-ol-FIu" secondAttribute="bottom" constant="49" id="spU-ng-jDL"/>
+                            <constraint firstItem="AcA-rq-Z1A" firstAttribute="top" secondItem="Zt4-3R-hud" secondAttribute="bottom" constant="8" symbolic="YES" id="tq3-cU-zGd"/>
+                            <constraint firstAttribute="centerX" secondItem="Zt4-3R-hud" secondAttribute="centerX" id="uXd-2A-Gcb"/>
+                            <constraint firstAttribute="centerX" secondItem="YjI-Yg-oBk" secondAttribute="centerX" constant="-0.5" id="ulE-Bn-byf"/>
+                            <constraint firstItem="Cd4-ol-FIu" firstAttribute="top" secondItem="bAk-jx-tt6" secondAttribute="bottom" constant="8" symbolic="YES" id="vMz-bv-GD9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hiScoreLabel" destination="X99-F6-4ln" id="odE-m5-Dxs"/>
+                        <outlet property="hiScoreValue" destination="YjI-Yg-oBk" id="KiT-ef-UKb"/>
+                        <outlet property="menuButon" destination="AcA-rq-Z1A" id="JFD-MK-paa"/>
+                        <outlet property="playAgainButton" destination="Zt4-3R-hud" id="b4Q-GG-v8V"/>
+                        <outlet property="yourScoreLabel" destination="bAk-jx-tt6" id="w2R-Xg-7uD"/>
+                        <outlet property="yourScoreValue" destination="Cd4-ol-FIu" id="nn6-In-HRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s14-X1-5tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="1012"/>
         </scene>
     </scenes>
 </document>

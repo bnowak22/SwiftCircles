@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87091A8B1AFA4ACF00432220 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D21031AF958DD00B91ECF /* EndGameViewController.swift */; };
 		872014561AEEC4C7003F15A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872014551AEEC4C7003F15A6 /* AppDelegate.swift */; };
 		872014581AEEC4C7003F15A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 872014571AEEC4C7003F15A6 /* GameScene.sks */; };
 		8720145A1AEEC4C7003F15A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872014591AEEC4C7003F15A6 /* GameScene.swift */; };
@@ -18,7 +19,6 @@
 		8720147B1AEEC524003F15A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720147A1AEEC524003F15A6 /* Constants.swift */; };
 		876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FC1AF8F3A800B91ECF /* GameCircle.swift */; };
 		876D20FF1AF9480D00B91ECF /* CirclesProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */; };
-		876D21041AF958DD00B91ECF /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D21031AF958DD00B91ECF /* EndGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		8720147A1AEEC524003F15A6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		876D20FC1AF8F3A800B91ECF /* GameCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
 		876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesProgressBar.swift; sourceTree = "<group>"; };
-		876D21031AF958DD00B91ECF /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		876D21031AF958DD00B91ECF /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndGameViewController.swift; path = SwiftCircles/EndGameViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +260,7 @@
 				876D20FF1AF9480D00B91ECF /* CirclesProgressBar.swift in Sources */,
 				872014561AEEC4C7003F15A6 /* AppDelegate.swift in Sources */,
 				8720147B1AEEC524003F15A6 /* Constants.swift in Sources */,
-				876D21041AF958DD00B91ECF /* EndGameViewController.swift in Sources */,
+				87091A8B1AFA4ACF00432220 /* EndGameViewController.swift in Sources */,
 				876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

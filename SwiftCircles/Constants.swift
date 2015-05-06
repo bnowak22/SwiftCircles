@@ -23,3 +23,4 @@ public let CIRCLE_INNER_COLOR = UIColor(red: 7/255, green: 242/255, blue: 70/255
 public let PROGRESS_BAR_COLOR = UIColor(red: 168/255, green: 8/255, blue: 57/255, alpha: 1.0)
 
 public let HI_SCORE_KEY = "circlesHiScore"
+public let CURRENT_SCORE_KEY = "circlesCurrentScore"

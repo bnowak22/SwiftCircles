@@ -11,14 +11,14 @@ import UIKit
 
 class EndGameViewController: UIViewController {
     
-//    @IBOutlet weak var yourScoreLabel: UILabel!
-//    @IBOutlet weak var yourScoreNumber: UILabel!
-//    
-//    @IBOutlet weak var hiScoreLabel: UILabel!
-//    @IBOutlet weak var hiScoreNumber: UILabel!
-//    
-//    @IBOutlet weak var playAgainButton: UIButton!
-//    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var yourScoreLabel: UILabel!
+    @IBOutlet weak var yourScoreValue: UILabel!
+
+    @IBOutlet weak var hiScoreLabel: UILabel!
+    @IBOutlet weak var hiScoreValue: UILabel!
+    
+    @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var menuButon: UIButton!
     
     override func viewDidLoad() {
         
@@ -26,8 +26,23 @@ class EndGameViewController: UIViewController {
         self.view.backgroundColor = BACKGROUND_COLOR
         
         //customize labels
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let currentScore = defaults.stringForKey(CURRENT_SCORE_KEY) {
+            yourScoreValue.text = String(currentScore)
+        }
+        
+        if let hiScore = defaults.stringForKey(HI_SCORE_KEY) {
+            hiScoreValue.text = String(hiScore)
+        }
         
         //customize buttons
+        
+        
+    }
+    
+    func restartGame() {
+        
     }
     
 }

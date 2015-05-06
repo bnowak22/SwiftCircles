@@ -113,6 +113,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
+        
+        //save current score
+        defaults.setObject(String(format: "%i", circleScore), forKey: CURRENT_SCORE_KEY)
+        
         //get score and hiscore
         if var hiScore = defaults.stringForKey(HI_SCORE_KEY) {
             if circleScore > hiScore.toInt() {
@@ -127,7 +131,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //display results page
-        //self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)
+        self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)
     }
     
     //collision

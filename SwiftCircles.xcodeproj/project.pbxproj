@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87091A8B1AFA4ACF00432220 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D21031AF958DD00B91ECF /* EndGameViewController.swift */; };
+		87091A8D1AFA577300432220 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87091A8C1AFA577300432220 /* StartGameViewController.swift */; };
 		872014561AEEC4C7003F15A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872014551AEEC4C7003F15A6 /* AppDelegate.swift */; };
 		872014581AEEC4C7003F15A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 872014571AEEC4C7003F15A6 /* GameScene.sks */; };
 		8720145A1AEEC4C7003F15A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872014591AEEC4C7003F15A6 /* GameScene.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87091A8C1AFA577300432220 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		872014501AEEC4C7003F15A6 /* SwiftCircles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCircles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872014541AEEC4C7003F15A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		872014551AEEC4C7003F15A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				8720145B1AEEC4C7003F15A6 /* GameViewController.swift */,
 				872014591AEEC4C7003F15A6 /* GameScene.swift */,
 				876D21031AF958DD00B91ECF /* EndGameViewController.swift */,
+				87091A8C1AFA577300432220 /* StartGameViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				8720147B1AEEC524003F15A6 /* Constants.swift in Sources */,
 				87091A8B1AFA4ACF00432220 /* EndGameViewController.swift in Sources */,
 				876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */,
+				87091A8D1AFA577300432220 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

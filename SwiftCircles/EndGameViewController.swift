@@ -18,7 +18,7 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var hiScoreValue: UILabel!
     
     @IBOutlet weak var playAgainButton: UIButton!
-    @IBOutlet weak var menuButon: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     override func viewDidLoad() {
         
@@ -40,12 +40,17 @@ class EndGameViewController: UIViewController {
         
         //customize buttons
         playAgainButton.addTarget(self, action: "restartGame", forControlEvents: UIControlEvents.TouchUpInside)
+        menuButton.addTarget(self, action: "showMenu", forControlEvents: UIControlEvents.TouchUpInside)
         
     }
     
     func restartGame() {
         println("Reloading game...")
         self.performSegueWithIdentifier("restartGameSegue", sender: nil)
+    }
+    
+    func showMenu() {
+        self.performSegueWithIdentifier("showMenuSegue", sender: nil)
     }
     
 }

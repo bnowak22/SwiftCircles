@@ -29,10 +29,11 @@ class GameViewController: UIViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.b
-            let skView = self.view as! SKView
+            let skView = self.originalContentView as! SKView
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
@@ -44,6 +45,9 @@ class GameViewController: UIViewController {
             scene.viewController = self
             
             skView.presentScene(scene)
+            
+            //enable ads
+            //self.canDisplayBannerAds = true
         }
     }
 

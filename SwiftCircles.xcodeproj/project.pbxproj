@@ -22,6 +22,7 @@
 		87091AAA1AFA84A200432220 /* app_icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 87091AA11AFA84A200432220 /* app_icon_120.png */; };
 		87091AAB1AFA84A200432220 /* app_icon_152.png in Resources */ = {isa = PBXBuildFile; fileRef = 87091AA21AFA84A200432220 /* app_icon_152.png */; };
 		87091AAC1AFA84A200432220 /* app_icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 87091AA31AFA84A200432220 /* app_icon_180.png */; };
+		87091AAE1AFAA42D00432220 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87091AAD1AFAA42D00432220 /* iAd.framework */; };
 		872014561AEEC4C7003F15A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872014551AEEC4C7003F15A6 /* AppDelegate.swift */; };
 		872014581AEEC4C7003F15A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 872014571AEEC4C7003F15A6 /* GameScene.sks */; };
 		8720145A1AEEC4C7003F15A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872014591AEEC4C7003F15A6 /* GameScene.swift */; };
@@ -60,6 +61,7 @@
 		87091AA11AFA84A200432220 /* app_icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_120.png; sourceTree = "<group>"; };
 		87091AA21AFA84A200432220 /* app_icon_152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_152.png; sourceTree = "<group>"; };
 		87091AA31AFA84A200432220 /* app_icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_180.png; sourceTree = "<group>"; };
+		87091AAD1AFAA42D00432220 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		872014501AEEC4C7003F15A6 /* SwiftCircles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCircles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872014541AEEC4C7003F15A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		872014551AEEC4C7003F15A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87091AAE1AFAA42D00432220 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +121,7 @@
 		872014471AEEC4C6003F15A6 = {
 			isa = PBXGroup;
 			children = (
+				87091AAD1AFAA42D00432220 /* iAd.framework */,
 				872014521AEEC4C7003F15A6 /* SwiftCircles */,
 				8720146C1AEEC4C7003F15A6 /* SwiftCirclesTests */,
 				872014511AEEC4C7003F15A6 /* Products */,

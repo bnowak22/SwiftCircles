@@ -17,25 +17,47 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var hiScoreLabel: UILabel!
     @IBOutlet weak var hiScoreValue: UILabel!
     
+    @IBOutlet weak var congratsLabel: UILabel!
+    
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
+    
+    var current = 0
+    var hi = 0
     
     override func viewDidLoad() {
         
         //set background color
         self.view.backgroundColor = BACKGROUND_COLOR
         
-        //customize labels
-        
         //set label values
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let currentScore = defaults.stringForKey(CURRENT_SCORE_KEY) {
-            yourScoreValue.text = String(currentScore)
+            yourScoreValue.text = currentScore + "."
+            current = currentScore.toInt()!
         }
         
         if let hiScore = defaults.stringForKey(HI_SCORE_KEY) {
-            hiScoreValue.text = String(hiScore)
+            hiScoreValue.text = hiScore + "."
+            hi = hiScore.toInt()!
+        }
+        
+        //customize labels
+        if (current == hi) {
+            congratsLabel.text = ("Nice.")
+        }
+        else if (hi - current == 1) {
+            congratsLabel.text = ("...that's unfortunate.")
+        }
+        else if (hi - current >= 2 && hi - current < 5) {
+            congratsLabel.text = ("Very close!")
+        }
+        else if (hi - current >= 5 && hi - current < 10) {
+            congratsLabel.text = ("I've seen worse.")
+        }
+        else {
+            congratsLabel.text = ("Were you trying?")
         }
         
         //customize buttons

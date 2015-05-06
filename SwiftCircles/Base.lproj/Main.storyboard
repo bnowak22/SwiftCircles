@@ -125,6 +125,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x05-8l-Nn0">
+                                <rect key="frame" x="47" y="193" width="507" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="jLP-gf-BmE"/>
+                                </constraints>
+                                <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  If you have bad timing, you're gonna lose faster.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-zK-Oc3">
                                 <rect key="frame" x="47" y="386" width="507" height="96"/>
                                 <constraints>
@@ -154,42 +164,32 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-Ye-fmP">
-                                <rect key="frame" x="126" y="286" width="349" height="100"/>
+                                <rect key="frame" x="134" y="284" width="333" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="349" id="I2v-tE-M7n"/>
+                                    <constraint firstAttribute="width" constant="333" id="I2v-tE-M7n"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x05-8l-Nn0">
-                                <rect key="frame" x="47" y="182" width="507" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="jLP-gf-BmE"/>
-                                </constraints>
-                                <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  If you have bad timing, you're gonna lose faster.</string>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1Q1-2F-M7b" firstAttribute="top" secondItem="cMA-FV-Sbo" secondAttribute="bottom" constant="2" id="0FJ-ri-ld1"/>
-                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="top" secondItem="Zlf-Ye-fmP" secondAttribute="bottom" id="16u-b7-mMf"/>
+                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="top" secondItem="Zlf-Ye-fmP" secondAttribute="bottom" constant="2" id="16u-b7-mMf"/>
                             <constraint firstItem="2ad-VO-hoL" firstAttribute="top" secondItem="gs2-pJ-Gg0" secondAttribute="bottom" id="2mN-QA-JQV"/>
                             <constraint firstAttribute="centerX" secondItem="8LS-zK-Oc3" secondAttribute="centerX" constant="-0.5" id="34Q-JR-bql"/>
                             <constraint firstItem="3mf-eI-3gT" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="6pM-kK-xhm"/>
                             <constraint firstItem="1Q1-2F-M7b" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="6rj-io-EZC"/>
                             <constraint firstItem="x05-8l-Nn0" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="BdQ-uF-cOl"/>
                             <constraint firstItem="8LS-zK-Oc3" firstAttribute="leading" secondItem="RAv-yq-EBE" secondAttribute="leadingMargin" constant="31" id="Byk-fw-mq0"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="top" secondItem="1Q1-2F-M7b" secondAttribute="bottom" constant="-18" id="DCS-KW-Ph3"/>
+                            <constraint firstItem="x05-8l-Nn0" firstAttribute="top" secondItem="1Q1-2F-M7b" secondAttribute="bottom" constant="-7" id="DCS-KW-Ph3"/>
                             <constraint firstItem="3mf-eI-3gT" firstAttribute="top" secondItem="8LS-zK-Oc3" secondAttribute="bottom" constant="57" id="DJ9-tf-HgB"/>
                             <constraint firstAttribute="centerX" secondItem="2ad-VO-hoL" secondAttribute="centerX" constant="-0.5" id="FRa-6F-vCw"/>
                             <constraint firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" constant="-0.5" id="Frh-fJ-VBC"/>
                             <constraint firstAttribute="bottom" secondItem="3mf-eI-3gT" secondAttribute="bottom" constant="20" symbolic="YES" id="L6F-Lo-J7s"/>
                             <constraint firstItem="2ad-VO-hoL" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="MKU-PV-fLx"/>
                             <constraint firstItem="cMA-FV-Sbo" firstAttribute="top" secondItem="2ad-VO-hoL" secondAttribute="bottom" constant="-6" id="N2R-Wb-gAe"/>
-                            <constraint firstItem="Zlf-Ye-fmP" firstAttribute="top" secondItem="x05-8l-Nn0" secondAttribute="bottom" constant="21" id="NHA-Mu-31s"/>
+                            <constraint firstItem="Zlf-Ye-fmP" firstAttribute="top" secondItem="x05-8l-Nn0" secondAttribute="bottom" constant="8" id="NHA-Mu-31s"/>
                             <constraint firstItem="1Q1-2F-M7b" firstAttribute="top" secondItem="RAv-yq-EBE" secondAttribute="top" constant="72" id="SQB-NW-x53"/>
-                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="top" secondItem="Zlf-Ye-fmP" secondAttribute="bottom" id="bj7-ai-adg"/>
+                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="top" secondItem="Zlf-Ye-fmP" secondAttribute="bottom" constant="2" id="bj7-ai-adg"/>
                             <constraint firstItem="8LS-zK-Oc3" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="dhA-hi-zLf"/>
                             <constraint firstItem="x05-8l-Nn0" firstAttribute="leading" secondItem="8LS-zK-Oc3" secondAttribute="leading" id="ft5-zI-iXl"/>
                             <constraint firstItem="cMA-FV-Sbo" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="mFS-NF-Rsj"/>

@@ -248,7 +248,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="AcP-LJ-p7c"/>
                                 </constraints>
-                                <string key="text">The number on top of the bar is the number of circles you've filled.  The bar below grows outward as you over and under-fill circles.  If you fill a circle perfectly, the bar will shrink.  Dont let it reach the edges!  </string>
+                                <string key="text">The number on top of the bar is the number of circles you've filled.  The bar below grows outward as you over and under-fill circles.  It also grows if you aren't actively filling a circle.  If you fill a circle perfectly, the bar will shrink.  Dont let it reach the edges!  </string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -482,7 +482,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vVu-Dt-4hJ"/>
-        <segue reference="Rse-en-dyr"/>
+        <segue reference="4LC-eD-kh3"/>
+        <segue reference="1og-iW-5dw"/>
     </inferredMetricsTieBreakers>
 </document>

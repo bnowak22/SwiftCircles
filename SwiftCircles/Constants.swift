@@ -12,10 +12,10 @@ import UIKit
 public let MIN_CIRCLE_RADIUS = 35
 public let MAX_CIRCLE_RADIUS = 120
 
-public let MIN_GROW_RATE = 0.5
+public let MIN_GROW_RATE = 1.0
 public let MAX_GROW_RATE = 2.5
 
-public let TIME_PENALTY = 0.05
+public let TIME_PENALTY = 0.075
 
 public let PERFECT_DELTA = 1.5
 public let PERFECT_BONUS = -5.0

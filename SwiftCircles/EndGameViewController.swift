@@ -46,6 +46,7 @@ class EndGameViewController: UIViewController {
             hi = hiScore.toInt()!
         }
         
+        
         //customize labels
         if (current == hi) {
             congratsLabel.text = ("Nice.")

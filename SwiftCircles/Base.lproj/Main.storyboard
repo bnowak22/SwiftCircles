@@ -137,8 +137,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Q1-2F-M7b">
                                 <rect key="frame" x="213" y="100" width="175" height="175"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="3kQ-ac-VtH"/>
-                                    <constraint firstAttribute="width" constant="175" id="rbr-aj-Cc9"/>
+                                    <constraint firstAttribute="height" constant="175" id="3kQ-ac-VtH">
+                                        <variation key="widthClass=compact" constant="170"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="175" id="rbr-aj-Cc9">
+                                        <variation key="widthClass=compact" constant="170"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScB-s2-pZC">
@@ -158,8 +162,8 @@
                                     <constraint firstAttribute="height" constant="190" id="RCC-Kl-XUf"/>
                                 </constraints>
                                 <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  The more you under or over-fill the circle, the faster the game will be over.  Fill up as many circles as you can before you lose!</string>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -176,7 +180,9 @@
                             <constraint firstAttribute="centerX" secondItem="x05-8l-Nn0" secondAttribute="centerX" constant="-0.5" id="V6k-bS-KHX"/>
                             <constraint firstItem="x05-8l-Nn0" firstAttribute="leading" secondItem="RAv-yq-EBE" secondAttribute="leadingMargin" id="XXn-lN-xmg"/>
                             <constraint firstAttribute="centerX" secondItem="ScB-s2-pZC" secondAttribute="centerX" id="hRw-DC-3dZ"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="top" secondItem="1Q1-2F-M7b" secondAttribute="bottom" constant="-52" id="rbG-wD-XoB"/>
+                            <constraint firstItem="x05-8l-Nn0" firstAttribute="top" secondItem="1Q1-2F-M7b" secondAttribute="bottom" constant="-52" id="rbG-wD-XoB">
+                                <variation key="widthClass=compact" constant="-39"/>
+                            </constraint>
                             <constraint firstItem="sbH-tZ-6o8" firstAttribute="top" secondItem="3mf-eI-3gT" secondAttribute="bottom" constant="20" id="su2-n6-V7h"/>
                             <constraint firstAttribute="centerX" secondItem="cMA-FV-Sbo" secondAttribute="centerX" id="tub-PE-T36"/>
                         </constraints>
@@ -238,8 +244,8 @@
                                     <constraint firstAttribute="height" constant="190" id="AcP-LJ-p7c"/>
                                 </constraints>
                                 <string key="text">The number on top of the bar is the number of circles you've filled.  The bar below grows outward as you over and under-fill circles.  If you fill a circle perfectly, the bar will shrink.  Dont let it reach the edges!  </string>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-gn-fcg">
@@ -264,7 +270,9 @@
                         <constraints>
                             <constraint firstItem="Fz2-lf-HAV" firstAttribute="top" secondItem="MWp-gn-fcg" secondAttribute="bottom" constant="8" id="7ef-tw-Ne3"/>
                             <constraint firstItem="5Yd-ib-ltF" firstAttribute="top" secondItem="yiw-lH-o90" secondAttribute="bottom" constant="15" id="9At-Hq-HHg"/>
-                            <constraint firstItem="Zd7-Tj-hdP" firstAttribute="top" secondItem="D8g-Ya-cc1" secondAttribute="bottom" constant="-52" id="Bzu-7b-bcW"/>
+                            <constraint firstItem="Zd7-Tj-hdP" firstAttribute="top" secondItem="D8g-Ya-cc1" secondAttribute="bottom" constant="-52" id="Bzu-7b-bcW">
+                                <variation key="widthClass=compact" constant="-57"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="Fz2-lf-HAV" secondAttribute="centerX" id="IpK-lS-Gv9"/>
                             <constraint firstAttribute="centerX" secondItem="MWp-gn-fcg" secondAttribute="centerX" id="LK0-td-IvU"/>
                             <constraint firstAttribute="centerX" secondItem="k4y-gg-1vz" secondAttribute="centerX" id="MIf-m7-RTO"/>
@@ -444,7 +452,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="MxB-tk-TRr"/>
         <segue reference="1og-iW-5dw"/>
-        <segue reference="4LC-eD-kh3"/>
     </inferredMetricsTieBreakers>
 </document>

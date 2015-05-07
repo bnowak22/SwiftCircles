@@ -12,8 +12,8 @@ import UIKit
 class InstructionsViewController: UIViewController {
 
     @IBOutlet weak var circleImageView: UIImageView!
-    @IBOutlet weak var scoringImageView: UIImageView!
     
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
     override func viewDidLoad() {
@@ -23,22 +23,22 @@ class InstructionsViewController: UIViewController {
         
         //set images
         circleImageView.image = UIImage(named: "circle_screenshot.png")
-        scoringImageView.image = UIImage(named: "scoring_screenshot.png")
         
         circleImageView.autoresizingMask = UIViewAutoresizing.FlexibleBottomMargin | UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleWidth
         circleImageView.contentMode = UIViewContentMode.ScaleAspectFit
         
-        scoringImageView.autoresizingMask = UIViewAutoresizing.FlexibleBottomMargin | UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleWidth
-        scoringImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        
-        
-        //set button
+        //set buttons
+        nextButton.addTarget(self, action: "nextInstruction", forControlEvents: UIControlEvents.TouchUpInside)
         menuButton.addTarget(self, action: "showMenu", forControlEvents: UIControlEvents.TouchUpInside)
         
     }
     
     func showMenu() {
         self.performSegueWithIdentifier("showMenuSegue", sender: nil)
+    }
+    
+    func nextInstruction() {
+        self.performSegueWithIdentifier("showNextInstructionSegue", sender: nil)
     }
     
 }

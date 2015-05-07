@@ -115,30 +115,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(it's easy)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMA-FV-Sbo">
-                                <rect key="frame" x="223" y="64" width="154" height="21"/>
+                                <rect key="frame" x="223" y="72" width="154" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="154" id="GLw-gw-XCv"/>
-                                    <constraint firstAttribute="height" constant="21" id="qNu-zA-2tV"/>
+                                    <constraint firstAttribute="width" constant="154" id="uuY-Xj-P54"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-zK-Oc3">
-                                <rect key="frame" x="47" y="384" width="507" height="113"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="113" id="iqe-SA-zw5"/>
-                                </constraints>
-                                <string key="text">The number on top is the number of circles you've filled.  The bar grows outward based on how close you were to perfectly filling the circle.  The bar also grows when you aren't filling a circle.  Don't let it reach the edges!</string>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mf-eI-3gT">
-                                <rect key="frame" x="246" y="539" width="108" height="41"/>
+                                <rect key="frame" x="246" y="541" width="108" height="39"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="1Gh-JY-AK6"/>
-                                    <constraint firstAttribute="width" constant="108" id="HFt-Q2-mng"/>
+                                    <constraint firstAttribute="width" constant="108" id="KLs-Iq-fIB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Menu">
@@ -147,25 +135,29 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Q1-2F-M7b">
-                                <rect key="frame" x="240" y="98" width="120" height="120"/>
+                                <rect key="frame" x="213" y="100" width="175" height="175"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Nnr-Vo-5De"/>
-                                    <constraint firstAttribute="width" constant="120" id="sFb-eR-qCf"/>
+                                    <constraint firstAttribute="height" constant="175" id="3kQ-ac-VtH"/>
+                                    <constraint firstAttribute="width" constant="175" id="rbr-aj-Cc9"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-Ye-fmP">
-                                <rect key="frame" x="222" y="293" width="156" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScB-s2-pZC">
+                                <rect key="frame" x="246" y="494" width="108" height="39"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Rja-M2-NbA"/>
-                                    <constraint firstAttribute="width" constant="156" id="fBe-Hu-D2Z"/>
+                                    <constraint firstAttribute="width" constant="108" id="SF0-bl-NmO"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x05-8l-Nn0">
-                                <rect key="frame" x="47" y="213" width="507" height="83"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x05-8l-Nn0">
+                                <rect key="frame" x="16" y="223" width="568" height="190"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="mtk-wi-CXq"/>
+                                    <constraint firstAttribute="height" constant="190" id="RCC-Kl-XUf"/>
                                 </constraints>
-                                <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  If you have bad timing, you're gonna lose faster.</string>
+                                <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  The more you under or over-fill the circle, the faster the game will be over.  Fill up as many circles as you can before you lose!</string>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -173,36 +165,131 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="centerX" secondItem="Zlf-Ye-fmP" secondAttribute="centerX" id="2MY-hz-e0J"/>
-                            <constraint firstAttribute="bottom" secondItem="3mf-eI-3gT" secondAttribute="bottom" constant="20" symbolic="YES" id="3zy-pb-MjO"/>
-                            <constraint firstItem="1Q1-2F-M7b" firstAttribute="centerX" secondItem="cMA-FV-Sbo" secondAttribute="centerX" id="4IW-xd-ntV"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="trailing" secondItem="8LS-zK-Oc3" secondAttribute="trailing" id="7bO-Ho-0Hx"/>
-                            <constraint firstItem="1Q1-2F-M7b" firstAttribute="top" secondItem="cMA-FV-Sbo" secondAttribute="bottom" constant="13" id="AOl-Pz-kFa"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="leading" secondItem="RAv-yq-EBE" secondAttribute="leadingMargin" constant="31" id="Dfn-o8-FAO"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="centerX" secondItem="1Q1-2F-M7b" secondAttribute="centerX" id="GNy-4t-QO8"/>
-                            <constraint firstItem="Zlf-Ye-fmP" firstAttribute="top" secondItem="x05-8l-Nn0" secondAttribute="bottom" constant="-3" id="HX2-gd-zLB"/>
-                            <constraint firstItem="2ad-VO-hoL" firstAttribute="top" secondItem="gs2-pJ-Gg0" secondAttribute="bottom" constant="15" id="McI-oF-gBE"/>
-                            <constraint firstItem="2ad-VO-hoL" firstAttribute="centerX" secondItem="cMA-FV-Sbo" secondAttribute="centerX" id="SdH-YS-Wrb"/>
-                            <constraint firstItem="2ad-VO-hoL" firstAttribute="leading" secondItem="RAv-yq-EBE" secondAttribute="leadingMargin" constant="50" id="TEo-gM-xrz"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="leading" secondItem="8LS-zK-Oc3" secondAttribute="leading" id="WWg-D4-ln0"/>
-                            <constraint firstItem="3mf-eI-3gT" firstAttribute="centerX" secondItem="RAv-yq-EBE" secondAttribute="centerX" id="dJT-E2-IuM"/>
-                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="centerX" secondItem="3mf-eI-3gT" secondAttribute="centerX" id="dko-oE-aPw"/>
-                            <constraint firstItem="3mf-eI-3gT" firstAttribute="top" secondItem="8LS-zK-Oc3" secondAttribute="bottom" constant="42" id="hax-89-55f"/>
-                            <constraint firstItem="x05-8l-Nn0" firstAttribute="top" secondItem="1Q1-2F-M7b" secondAttribute="bottom" constant="-5" id="hlq-C7-o6h"/>
-                            <constraint firstItem="8LS-zK-Oc3" firstAttribute="top" secondItem="Zlf-Ye-fmP" secondAttribute="bottom" constant="-9" id="qbx-04-28m"/>
-                            <constraint firstItem="cMA-FV-Sbo" firstAttribute="top" secondItem="gs2-pJ-Gg0" secondAttribute="bottom" constant="44" id="zWU-VG-Ffz"/>
+                            <constraint firstItem="cMA-FV-Sbo" firstAttribute="top" secondItem="gs2-pJ-Gg0" secondAttribute="bottom" constant="52" id="4sl-e7-XLO"/>
+                            <constraint firstItem="3mf-eI-3gT" firstAttribute="top" secondItem="ScB-s2-pZC" secondAttribute="bottom" constant="8" id="ALV-YY-sD6"/>
+                            <constraint firstItem="2ad-VO-hoL" firstAttribute="centerX" secondItem="1Q1-2F-M7b" secondAttribute="centerX" id="AZi-a6-p45"/>
+                            <constraint firstItem="1Q1-2F-M7b" firstAttribute="top" secondItem="cMA-FV-Sbo" secondAttribute="bottom" constant="8" id="JtT-EW-imz"/>
+                            <constraint firstItem="2ad-VO-hoL" firstAttribute="leading" secondItem="RAv-yq-EBE" secondAttribute="leadingMargin" constant="50" id="LVv-Et-2T8"/>
+                            <constraint firstItem="2ad-VO-hoL" firstAttribute="top" secondItem="gs2-pJ-Gg0" secondAttribute="bottom" constant="15" id="Qt1-gR-mTD"/>
+                            <constraint firstAttribute="centerX" secondItem="1Q1-2F-M7b" secondAttribute="centerX" id="UAl-Lk-Neh"/>
+                            <constraint firstAttribute="centerX" secondItem="3mf-eI-3gT" secondAttribute="centerX" id="Ujq-lc-2P5"/>
+                            <constraint firstAttribute="centerX" secondItem="x05-8l-Nn0" secondAttribute="centerX" constant="-0.5" id="V6k-bS-KHX"/>
+                            <constraint firstItem="x05-8l-Nn0" firstAttribute="leading" secondItem="RAv-yq-EBE" secondAttribute="leadingMargin" id="XXn-lN-xmg"/>
+                            <constraint firstAttribute="centerX" secondItem="ScB-s2-pZC" secondAttribute="centerX" id="hRw-DC-3dZ"/>
+                            <constraint firstItem="x05-8l-Nn0" firstAttribute="top" secondItem="1Q1-2F-M7b" secondAttribute="bottom" constant="-52" id="rbG-wD-XoB"/>
+                            <constraint firstItem="sbH-tZ-6o8" firstAttribute="top" secondItem="3mf-eI-3gT" secondAttribute="bottom" constant="20" id="su2-n6-V7h"/>
+                            <constraint firstAttribute="centerX" secondItem="cMA-FV-Sbo" secondAttribute="centerX" id="tub-PE-T36"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circleImageView" destination="1Q1-2F-M7b" id="WZx-ZU-aN7"/>
                         <outlet property="menuButton" destination="3mf-eI-3gT" id="bNg-L7-Paq"/>
-                        <outlet property="scoringImageView" destination="Zlf-Ye-fmP" id="H4S-nh-mkh"/>
+                        <outlet property="nextButton" destination="ScB-s2-pZC" id="Eph-0Q-RTQ"/>
                         <segue destination="vjD-Na-Rd9" kind="show" identifier="showMenuSegue" id="MxB-tk-TRr"/>
+                        <segue destination="YSE-SD-9yu" kind="show" identifier="showNextInstructionSegue" id="M92-du-hgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9d-P5-c7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-462" y="1096"/>
+        </scene>
+        <!--Instructions Page Two View Controller-->
+        <scene sceneID="ZRl-x6-ViC">
+            <objects>
+                <viewController id="YSE-SD-9yu" customClass="InstructionsPageTwoViewController" customModule="SwiftCircles" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yiw-lH-o90"/>
+                        <viewControllerLayoutGuide type="bottom" id="k2k-U6-eJa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iZv-Kd-FGh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(part two)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4y-gg-1vz">
+                                <rect key="frame" x="223" y="72" width="154" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="tTj-Vj-hXD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz2-lf-HAV">
+                                <rect key="frame" x="246" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="zcC-r1-dde"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D8g-Ya-cc1">
+                                <rect key="frame" x="213" y="100" width="175" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="6WT-wS-A6E"/>
+                                    <constraint firstAttribute="height" constant="175" id="MlD-mY-Nsp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd7-Tj-hdP">
+                                <rect key="frame" x="16" y="223" width="568" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="AcP-LJ-p7c"/>
+                                </constraints>
+                                <string key="text">The number on top of the bar is the number of circles you've filled.  The bar below grows outward as you over and under-fill circles.  If you fill a circle perfectly, the bar will shrink.  Dont let it reach the edges!  </string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-gn-fcg">
+                                <rect key="frame" x="246" y="494" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="ZSe-6C-I1k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yd-ib-ltF">
+                                <rect key="frame" x="66" y="35" width="469" height="39"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fz2-lf-HAV" firstAttribute="top" secondItem="MWp-gn-fcg" secondAttribute="bottom" constant="8" id="7ef-tw-Ne3"/>
+                            <constraint firstItem="5Yd-ib-ltF" firstAttribute="top" secondItem="yiw-lH-o90" secondAttribute="bottom" constant="15" id="9At-Hq-HHg"/>
+                            <constraint firstItem="Zd7-Tj-hdP" firstAttribute="top" secondItem="D8g-Ya-cc1" secondAttribute="bottom" constant="-52" id="Bzu-7b-bcW"/>
+                            <constraint firstAttribute="centerX" secondItem="Fz2-lf-HAV" secondAttribute="centerX" id="IpK-lS-Gv9"/>
+                            <constraint firstAttribute="centerX" secondItem="MWp-gn-fcg" secondAttribute="centerX" id="LK0-td-IvU"/>
+                            <constraint firstAttribute="centerX" secondItem="k4y-gg-1vz" secondAttribute="centerX" id="MIf-m7-RTO"/>
+                            <constraint firstItem="k2k-U6-eJa" firstAttribute="top" secondItem="Fz2-lf-HAV" secondAttribute="bottom" constant="20" id="TRl-0u-rsJ"/>
+                            <constraint firstItem="k4y-gg-1vz" firstAttribute="top" secondItem="yiw-lH-o90" secondAttribute="bottom" constant="52" id="YWm-M7-0Zh"/>
+                            <constraint firstAttribute="centerX" secondItem="D8g-Ya-cc1" secondAttribute="centerX" constant="-0.5" id="gli-Wt-m4k"/>
+                            <constraint firstItem="D8g-Ya-cc1" firstAttribute="top" secondItem="k4y-gg-1vz" secondAttribute="bottom" constant="8" id="mYm-va-cig"/>
+                            <constraint firstAttribute="centerX" secondItem="5Yd-ib-ltF" secondAttribute="centerX" constant="-0.5" id="oGU-Ho-B9C"/>
+                            <constraint firstItem="k4y-gg-1vz" firstAttribute="top" secondItem="5Yd-ib-ltF" secondAttribute="bottom" constant="-2" id="q5P-uW-fXq"/>
+                            <constraint firstItem="Zd7-Tj-hdP" firstAttribute="leading" secondItem="iZv-Kd-FGh" secondAttribute="leadingMargin" id="qR2-Pq-CO0"/>
+                            <constraint firstItem="5Yd-ib-ltF" firstAttribute="leading" secondItem="iZv-Kd-FGh" secondAttribute="leadingMargin" constant="50" id="wZY-FW-ELV"/>
+                            <constraint firstAttribute="centerX" secondItem="Zd7-Tj-hdP" secondAttribute="centerX" id="zDv-Sj-quw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuButton" destination="Fz2-lf-HAV" id="ss4-2X-zyz"/>
+                        <outlet property="playButton" destination="MWp-gn-fcg" id="RpB-UI-ypO"/>
+                        <outlet property="scoringImageView" destination="D8g-Ya-cc1" id="dRK-O4-lkK"/>
+                        <segue destination="vjD-Na-Rd9" kind="show" identifier="showMenuSegue" id="4LC-eD-kh3"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="playGameSegue" id="1og-iW-5dw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bd1-h5-9iV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="329" y="1096"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -357,7 +444,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vVu-Dt-4hJ"/>
-        <segue reference="Rse-en-dyr"/>
+        <segue reference="1og-iW-5dw"/>
+        <segue reference="4LC-eD-kh3"/>
     </inferredMetricsTieBreakers>
 </document>

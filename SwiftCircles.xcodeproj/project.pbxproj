@@ -32,6 +32,7 @@
 		876CA6FD1AFBB37100BEBF7B /* app_icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 876CA6F41AFBB37100BEBF7B /* app_icon_120.png */; };
 		876CA6FE1AFBB37100BEBF7B /* app_icon_152.png in Resources */ = {isa = PBXBuildFile; fileRef = 876CA6F51AFBB37100BEBF7B /* app_icon_152.png */; };
 		876CA6FF1AFBB37100BEBF7B /* app_icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 876CA6F61AFBB37100BEBF7B /* app_icon_180.png */; };
+		876CA7011AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CA7001AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift */; };
 		876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FC1AF8F3A800B91ECF /* GameCircle.swift */; };
 		876D20FF1AF9480D00B91ECF /* CirclesProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		876CA6F41AFBB37100BEBF7B /* app_icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_120.png; sourceTree = "<group>"; };
 		876CA6F51AFBB37100BEBF7B /* app_icon_152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_152.png; sourceTree = "<group>"; };
 		876CA6F61AFBB37100BEBF7B /* app_icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_180.png; sourceTree = "<group>"; };
+		876CA7001AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsPageTwoViewController.swift; sourceTree = "<group>"; };
 		876D20FC1AF8F3A800B91ECF /* GameCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
 		876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesProgressBar.swift; sourceTree = "<group>"; };
 		876D21031AF958DD00B91ECF /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndGameViewController.swift; path = SwiftCircles/EndGameViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -204,6 +206,7 @@
 				876D21031AF958DD00B91ECF /* EndGameViewController.swift */,
 				87091A8C1AFA577300432220 /* StartGameViewController.swift */,
 				87091A8E1AFA5FAD00432220 /* InstructionsViewController.swift */,
+				876CA7001AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				87091A8B1AFA4ACF00432220 /* EndGameViewController.swift in Sources */,
 				876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */,
 				87091A8D1AFA577300432220 /* StartGameViewController.swift in Sources */,
+				876CA7011AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

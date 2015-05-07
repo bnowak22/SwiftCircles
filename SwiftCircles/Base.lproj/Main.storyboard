@@ -122,22 +122,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x05-8l-Nn0">
-                                <rect key="frame" x="47" y="213" width="507" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="mtk-wi-CXq"/>
-                                </constraints>
-                                <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  If you have bad timing, you're gonna lose faster.</string>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-zK-Oc3">
                                 <rect key="frame" x="47" y="384" width="507" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="iqe-SA-zw5"/>
                                 </constraints>
-                                <string key="text">The number on top is the number of circles you've filled.  The bar fills up based on the how close you were to perfectly filling the circle.  The bar also fills when you aren't filling a circle.  Don't let it reach the edges!</string>
+                                <string key="text">The number on top is the number of circles you've filled.  The bar grows outward based on how close you were to perfectly filling the circle.  The bar also grows when you aren't filling a circle.  Don't let it reach the edges!</string>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -168,6 +158,16 @@
                                     <constraint firstAttribute="width" constant="156" id="fBe-Hu-D2Z"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x05-8l-Nn0">
+                                <rect key="frame" x="47" y="213" width="507" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="mtk-wi-CXq"/>
+                                </constraints>
+                                <string key="text">Hold your finger on the circle to fill it up.  Let go of it when it's completely full - no more, no less.  If you have bad timing, you're gonna lose faster.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

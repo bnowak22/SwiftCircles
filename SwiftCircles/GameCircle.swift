@@ -99,12 +99,24 @@ class GameCircle: SKShapeNode {
 
             self.shouldExpand = false
             
+            //get scene
+            var gameParent: GameScene = self.scene as! GameScene
+            
             //calculate radius difference for score
             var newDelta = abs(self.radius - self.innerRadius)
             
-            //update score
-            var gameParent: GameScene = self.scene as! GameScene
-            gameParent.delta = gameParent.delta + Double(newDelta)
+            //if difference is small, award "perfect" bonus and make delta negative
+            if newDelta <= CGFloat(PERFECT_DELTA) {
+                println("Perfect")
+                gameParent.wasPerfect = true
+                gameParent.delta = gameParent.delta + PERFECT_BONUS
+            }
+            //else, just update as normal
+            else {
+                //update score
+                gameParent.delta = gameParent.delta + Double(newDelta)
+            }
+            
             gameParent.circleScore = gameParent.circleScore + 1
             
             //remove circle from screen

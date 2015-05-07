@@ -15,7 +15,11 @@ public let MAX_CIRCLE_RADIUS = 120
 public let MIN_GROW_RATE = 0.5
 public let MAX_GROW_RATE = 2.5
 
-public let TIME_PENALTY = 0.02
+public let TIME_PENALTY = 0.05
+
+public let PERFECT_DELTA = 1.5
+public let PERFECT_BONUS = -5.0
+public let PERFECT_MESSAGE_FADE_TIME = 2.0
 
 public let BACKGROUND_COLOR = UIColor(red: 66/255, green: 235/255, blue: 218/255, alpha: 1.0)
 public let CIRCLE_MAIN_COLOR = UIColor(red: 175/255, green: 158/255, blue: 217/255, alpha: 1.0)

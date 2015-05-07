@@ -20,6 +20,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var delta = 0.0
     var circleScore = 0
     var progressBar = CirclesProgressBar()
+    
+    //perfection bonus support
+    var perfectLabel = SKLabelNode()
+    var wasPerfect = false
 
     //hiscore support
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -37,13 +41,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //set up score label
         scoreLabel.text = String(circleScore)
-        scoreLabel.fontSize = 36;
+        scoreLabel.fontSize = 36
         scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 35)
         self.addChild(scoreLabel)
         
         //set up progress bar
         progressBar.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 50)
         self.addChild(progressBar)
+        
+        //set up perfect label
+        perfectLabel.text = "Perfect!"
+        perfectLabel.fontSize = 26
+        perfectLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 90)
+        perfectLabel.alpha = 0  //makes it transparent
+        self.addChild(perfectLabel)
         
         //remove gravity
         self.physicsWorld.gravity = CGVectorMake(0, 0)
@@ -99,6 +110,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //update score
+        if (wasPerfect) {
+            perfectLabel.alpha = 1
+            perfectLabel.runAction(SKAction.fadeOutWithDuration(PERFECT_MESSAGE_FADE_TIME))
+            wasPerfect = false
+        }
+        
         deltaLabel.text = String(format: "%.1f", delta)
         progressBar.setProgress(CGFloat(delta/100))
         scoreLabel.text = String(circleScore)

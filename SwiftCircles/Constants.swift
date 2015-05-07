@@ -21,7 +21,8 @@ public let PERFECT_DELTA = 1.5
 public let PERFECT_BONUS = -5.0
 public let PERFECT_MESSAGE_FADE_TIME = 2.0
 
-public let BACKGROUND_COLOR = UIColor(red: 66/255, green: 235/255, blue: 218/255, alpha: 1.0)
+public let MENU_BACKGROUND_COLOR = UIColor(red: 66/255, green: 235/255, blue: 218/255, alpha: 1.0)
+public let GAME_BACKGROUND_COLOR = UIColor.grayColor()
 public let CIRCLE_MAIN_COLOR = UIColor(red: 175/255, green: 158/255, blue: 217/255, alpha: 1.0)
 public let CIRCLE_INNER_COLOR = UIColor(red: 7/255, green: 242/255, blue: 70/255, alpha: 1.0)
 public let PROGRESS_BAR_COLOR = UIColor(red: 168/255, green: 8/255, blue: 57/255, alpha: 1.0)

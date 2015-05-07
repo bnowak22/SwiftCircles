@@ -19,7 +19,7 @@ class InstructionsViewController: UIViewController {
     override func viewDidLoad() {
         
         //set background color
-        self.view.backgroundColor = BACKGROUND_COLOR
+        self.view.backgroundColor = MENU_BACKGROUND_COLOR
         
         //set images
         circleImageView.image = UIImage(named: "circle_screenshot.png")

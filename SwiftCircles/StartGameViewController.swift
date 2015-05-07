@@ -19,7 +19,7 @@ class StartGameViewController: UIViewController {
     override func viewDidLoad() {
         
         //set background color
-        self.view.backgroundColor = BACKGROUND_COLOR
+        self.view.backgroundColor = MENU_BACKGROUND_COLOR
         
         //customize labels
         

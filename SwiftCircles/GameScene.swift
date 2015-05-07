@@ -37,7 +37,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
         //set background color
-        backgroundColor = BACKGROUND_COLOR
+        backgroundColor = GAME_BACKGROUND_COLOR
         
         //set up score label
         scoreLabel.text = String(circleScore)

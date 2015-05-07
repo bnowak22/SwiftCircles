@@ -82,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 circle.innerCircle.position = circle.position
                 circle.innerCircle.strokeColor = SKColor.whiteColor()
                 circle.innerCircle.glowWidth = 0.25
-                circle.innerCircle.fillColor = CIRCLE_INNER_COLOR
+                circle.innerCircle.fillColor = circle.innerCircleColor
                 
                 //add circle to view
                 self.addChild(circle.innerCircle)

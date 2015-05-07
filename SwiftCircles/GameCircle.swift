@@ -26,6 +26,11 @@ class GameCircle: SKShapeNode {
     var shouldExpand = false
     var growRate: CGFloat = 1.0
     
+    //circle colors
+    var circleColors = [UIColor](arrayLiteral: UIColor.greenColor(), UIColor.redColor(), UIColor.blueColor(), UIColor.yellowColor(), UIColor.magentaColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.cyanColor())
+    var mainCircleColor = UIColor()
+    var innerCircleColor = UIColor()
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,11 +41,13 @@ class GameCircle: SKShapeNode {
         super.init()
         
         //set radius
-        
         self.radius = randomBetweenNumbers(CGFloat(MIN_CIRCLE_RADIUS), secondNum: CGFloat(MAX_CIRCLE_RADIUS))
         
         //enable touches
         self.userInteractionEnabled = true
+        
+        //set up colors
+        randomColors()
     
         //set up circle sizes
         self.innerCircle = SKShapeNode(circleOfRadius: self.radius)
@@ -58,7 +65,7 @@ class GameCircle: SKShapeNode {
         //set other attributes
         self.strokeColor = SKColor.whiteColor()
         self.glowWidth = 0.25
-        self.fillColor = CIRCLE_MAIN_COLOR
+        self.fillColor = mainCircleColor
         
         //calculate random grow rate
         self.growRate = randomBetweenNumbers(CGFloat(MIN_GROW_RATE), secondNum: CGFloat(MAX_GROW_RATE))
@@ -78,6 +85,17 @@ class GameCircle: SKShapeNode {
         
         let circlePos = CGPointMake(CGFloat(x), CGFloat(y))
         return circlePos
+    }
+    
+    //set random colors for circle
+    func randomColors() {
+        var mainIndex = Int(arc4random_uniform(UInt32(circleColors.count)))
+        var innerIndex = Int(arc4random_uniform(UInt32(circleColors.count)))
+        while mainIndex == innerIndex {
+            innerIndex = Int(arc4random_uniform(UInt32(circleColors.count)))
+        }
+        innerCircleColor = circleColors[innerIndex]
+        mainCircleColor = circleColors[mainIndex]
     }
     
     //random decimal in ranges

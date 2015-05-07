@@ -24,6 +24,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //perfection bonus support
     var perfectLabel = SKLabelNode()
     var wasPerfect = false
+    var perfectFills = 0
 
     //hiscore support
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -111,6 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //update score
         if (wasPerfect) {
+            perfectFills++
             perfectLabel.alpha = 1
             perfectLabel.runAction(SKAction.fadeOutWithDuration(PERFECT_MESSAGE_FADE_TIME))
             wasPerfect = false
@@ -134,6 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //save current score
         defaults.setObject(String(format: "%i", circleScore), forKey: CURRENT_SCORE_KEY)
+        defaults.setObject(String(format: "%i", perfectFills), forKey: PERFECT_FILLS_KEY)
         
         //get score and hiscore
         if var hiScore = defaults.stringForKey(HI_SCORE_KEY) {

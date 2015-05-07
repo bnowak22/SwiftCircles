@@ -12,17 +12,15 @@ import UIKit
 class EndGameViewController: UIViewController {
     
     @IBOutlet weak var yourScoreLabel: UILabel!
-    @IBOutlet weak var yourScoreValue: UILabel!
-
+    @IBOutlet weak var perfectFillsLabel: UILabel!
     @IBOutlet weak var hiScoreLabel: UILabel!
-    @IBOutlet weak var hiScoreValue: UILabel!
-    
     @IBOutlet weak var congratsLabel: UILabel!
     
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
     var current = 0
+    var perfect = 0
     var hi = 0
     
     override func viewDidLoad() {
@@ -34,12 +32,17 @@ class EndGameViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let currentScore = defaults.stringForKey(CURRENT_SCORE_KEY) {
-            yourScoreValue.text = currentScore + "."
+            yourScoreLabel.text = currentScore
             current = currentScore.toInt()!
         }
         
+        if let perfectScore = defaults.stringForKey(PERFECT_FILLS_KEY) {
+            perfectFillsLabel.text = perfectScore
+            perfect = perfectScore.toInt()!
+        }
+        
         if let hiScore = defaults.stringForKey(HI_SCORE_KEY) {
-            hiScoreValue.text = hiScore + "."
+            hiScoreLabel.text = hiScore
             hi = hiScore.toInt()!
         }
         

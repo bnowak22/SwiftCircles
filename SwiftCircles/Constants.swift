@@ -29,3 +29,4 @@ public let PROGRESS_BAR_COLOR = UIColor(red: 168/255, green: 8/255, blue: 57/255
 
 public let HI_SCORE_KEY = "circlesHiScore"
 public let CURRENT_SCORE_KEY = "circlesCurrentScore"
+public let PERFECT_FILLS_KEY = "perfectFillScore"

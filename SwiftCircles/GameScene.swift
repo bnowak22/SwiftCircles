@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import iAd
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -129,7 +128,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.removeAllChildren()
             endGame()
         }
-        
     }
     
     func endGame() {

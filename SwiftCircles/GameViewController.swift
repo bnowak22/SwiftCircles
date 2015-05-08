@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import iAd
 
 extension SKNode {
     class func unarchiveFromFile(file : String) -> SKNode? {
@@ -47,7 +48,15 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
             
             //enable ads
-            //self.canDisplayBannerAds = true
+            self.canDisplayBannerAds = true
+        }
+    }
+    
+    //interstitial add support
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "endGameSegue" {
+            let destination = segue.destinationViewController as! UIViewController
+            destination.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
         }
     }
 

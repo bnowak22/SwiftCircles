@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class GameCircle: SKShapeNode {
     

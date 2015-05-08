@@ -81,7 +81,7 @@ class GameCircle: SKShapeNode {
         let yBound = viewHeight - (2*self.radius) - 60
         
         let x = randomBetweenNumbers(self.radius, secondNum: xBound)
-        let y = randomBetweenNumbers(self.radius + BANNER_AD_HEIGHT, secondNum: yBound)
+        let y = randomBetweenNumbers(self.radius + CGFloat(BANNER_AD_HEIGHT), secondNum: yBound)
         
         let circlePos = CGPointMake(CGFloat(x), CGFloat(y))
         return circlePos

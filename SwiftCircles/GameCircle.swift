@@ -20,9 +20,6 @@ class GameCircle: SKShapeNode {
     var innerRadius: CGFloat = 0.0
     var innerCircle: SKShapeNode = SKShapeNode(circleOfRadius: 0)
     
-    //collision bitmask
-    let mainCircleCategory:UInt32 = 0x1 << 0
-    
     //expanding bool
     var shouldExpand = false
     var growRate: CGFloat = 1.0
@@ -57,11 +54,6 @@ class GameCircle: SKShapeNode {
         
         //set up position
         self.position = randomCoords()
-        
-        //set up collision bitmasks
-        self.physicsBody = SKPhysicsBody(circleOfRadius: self.radius, center: self.position)
-        self.physicsBody?.categoryBitMask = self.mainCircleCategory
-        self.physicsBody?.contactTestBitMask = self.mainCircleCategory
         
         //set other attributes
         self.strokeColor = SKColor.whiteColor()

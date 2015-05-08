@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene {
     
     //get view controller
     var viewController: GameViewController?
@@ -55,12 +55,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         perfectLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 90)
         perfectLabel.alpha = 0  //makes it transparent
         self.addChild(perfectLabel)
-        
-        //remove gravity
-        self.physicsWorld.gravity = CGVectorMake(0, 0)
-        
-        //set contact delegate
-        self.physicsWorld.contactDelegate = self
         
     }
    

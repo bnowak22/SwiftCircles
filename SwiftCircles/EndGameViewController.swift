@@ -8,14 +8,16 @@
 
 import Foundation
 import UIKit
+import GameKit
 
-class EndGameViewController: UIViewController {
+class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
     
     @IBOutlet weak var yourScoreLabel: UILabel!
     @IBOutlet weak var perfectFillsLabel: UILabel!
     @IBOutlet weak var hiScoreLabel: UILabel!
     @IBOutlet weak var congratsLabel: UILabel!
     
+    @IBOutlet weak var leaderboardButton: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
@@ -46,6 +48,8 @@ class EndGameViewController: UIViewController {
             hi = hiScore.toInt()!
         }
         
+        //save hi score to leaderboard
+        saveHighscore(hi)
         
         //customize labels
         if (current == hi) {
@@ -67,6 +71,8 @@ class EndGameViewController: UIViewController {
         //customize buttons
         playAgainButton.addTarget(self, action: "restartGame", forControlEvents: UIControlEvents.TouchUpInside)
         menuButton.addTarget(self, action: "showMenu", forControlEvents: UIControlEvents.TouchUpInside)
+        leaderboardButton.addTarget(self, action: "showLeader", forControlEvents: UIControlEvents.TouchUpInside)
+        
         
     }
     
@@ -79,4 +85,36 @@ class EndGameViewController: UIViewController {
         self.performSegueWithIdentifier("showMenuSegue", sender: nil)
     }
     
+    //save hi score to leaderboard
+    func saveHighscore(hi:Int) {
+        
+        //check if user is signed in
+        if GKLocalPlayer.localPlayer().authenticated {
+            
+            var scoreReporter = GKScore(leaderboardIdentifier: "circleStuffLeaderboard") //leaderboard id here
+            
+            scoreReporter.value = Int64(hi) //score variable here (same as above)
+            
+            var scoreArray: [GKScore] = [scoreReporter]
+            
+            GKScore.reportScores(scoreArray, withCompletionHandler: {(error : NSError!) -> Void in
+                if error != nil {
+                    println("error")
+                }
+            })
+        }
+    }
+    
+    //show leaderboard
+    func showLeader() {
+        var vc = self
+        var gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        vc.presentViewController(gc, animated: true, completion: nil)
+    }
+    
+    //hide leaderboard
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

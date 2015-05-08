@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GameKit
 
 class StartGameViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class StartGameViewController: UIViewController {
     @IBOutlet weak var circleImageView: UIImageView!
     
     override func viewDidLoad() {
+        
+        //authenticate
+        authenticateLocalPlayer()
         
         //set background color
         self.view.backgroundColor = MENU_BACKGROUND_COLOR
@@ -40,6 +44,24 @@ class StartGameViewController: UIViewController {
     
     func showInstructions() {
         self.performSegueWithIdentifier("showInstructionsSegue", sender: nil)
+    }
+    
+    //game center auth
+    func authenticateLocalPlayer(){
+        
+        var localPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            
+            if (viewController != nil) {
+                self.presentViewController(viewController, animated: true, completion: nil)
+            }
+                
+            else {
+                println((GKLocalPlayer.localPlayer().authenticated))
+            }
+        }
+        
     }
     
 }

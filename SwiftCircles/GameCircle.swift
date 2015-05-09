@@ -71,7 +71,7 @@ class GameCircle: SKShapeNode {
         var viewHeight = UIScreen.mainScreen().bounds.height
         
         let xBound = viewWidth - (2*self.radius)
-        let yBound = viewHeight - (2*self.radius) - 60
+        let yBound = viewHeight - (2*self.radius) - 60  //leave room for scoring info on top
         
         let x = randomBetweenNumbers(self.radius, secondNum: xBound)
         let y = randomBetweenNumbers(self.radius + CGFloat(BANNER_AD_HEIGHT), secondNum: yBound)

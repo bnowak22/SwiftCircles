@@ -133,7 +133,6 @@ class GameScene: SKScene {
         if (delta > 100) {
             self.scene!.view?.paused = true
             shouldDrawCircle = false
-            self.removeAllChildren()
             endGame()
         }
     }
@@ -162,6 +161,7 @@ class GameScene: SKScene {
         self.removeAllChildren()
         self.removeFromParent()
         self.view?.presentScene(nil)
+        viewController?.adBannerView.hidden = true
         
         //display results page
         self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)

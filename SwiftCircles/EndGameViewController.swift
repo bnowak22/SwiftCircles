@@ -24,6 +24,7 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
     var current = 0
     var perfect = 0
     var hi = 0
+    var concurrent = 0
     
     override func viewDidLoad() {
         
@@ -48,8 +49,21 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
             hi = hiScore.toInt()!
         }
         
+        if let concurrentScore = defaults.stringForKey(CONCURRENT_PERFECT_FILLS_KEY) {
+            concurrent = concurrentScore.toInt()!
+        }
+        
         //save hi score to leaderboard
         saveHighscore(hi)
+        
+        //check for circles filled achievement
+        checkCirclesFilledAchievements(current)
+        
+        //check for perfect fills achievement
+        checkPerfectFilledAchievements(perfect)
+        
+        //check for perfect fills in a row achievement
+        checkPerfectInRowAchievements(concurrent)
         
         //customize labels
         if (current == hi) {
@@ -104,6 +118,96 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
             })
         }
     }
+    
+    func checkCirclesFilledAchievements(score:Int) {
+        
+        if GKLocalPlayer.localPlayer().authenticated {
+            
+            var twentyFiveCircles = GKAchievement(identifier: "twentyFiveCircles")
+            var fiftyCircles = GKAchievement(identifier: "fiftyCircles")
+            var oneHundredCircles = GKAchievement(identifier: "oneHundredCircles")
+            
+            if score >= 25 && score < 50 {
+                twentyFiveCircles.percentComplete = 100
+                twentyFiveCircles.showsCompletionBanner = true
+            }
+            else if score >= 50 && score < 100 {
+                twentyFiveCircles.percentComplete = 100
+                fiftyCircles.percentComplete = 100
+                fiftyCircles.showsCompletionBanner = true
+            }
+            else if score >= 100 {
+                twentyFiveCircles.percentComplete = 100
+                fiftyCircles.percentComplete = 100
+                oneHundredCircles.percentComplete = 100
+                oneHundredCircles.showsCompletionBanner = true
+            }
+            
+            var achievements: [GKAchievement] = [twentyFiveCircles, fiftyCircles, oneHundredCircles]
+            
+            GKAchievement.reportAchievements(achievements, withCompletionHandler:  {(var error:NSError!) -> Void in
+                if error != nil {
+                    println("Couldn't save achievement progress.")
+                }
+            })
+        }
+        
+
+    }
+    
+    func checkPerfectFilledAchievements(perfect:Int) {
+        
+        if GKLocalPlayer.localPlayer().authenticated {
+            
+            var fivePerfectCircles = GKAchievement(identifier: "fivePerfectCircles")
+            var fifteenPerfectCircles = GKAchievement(identifier: "fifteenPerfectCircles")
+            var thirtyPerfectCircles = GKAchievement(identifier: "thirtyPerfectCircles")
+            
+            if perfect >= 5 && perfect < 15 {
+                fivePerfectCircles.percentComplete = 100
+                fivePerfectCircles.showsCompletionBanner = true
+            }
+            else if perfect >= 15 && perfect < 30 {
+                fivePerfectCircles.percentComplete = 100
+                fifteenPerfectCircles.percentComplete = 100
+                fifteenPerfectCircles.showsCompletionBanner = true
+            }
+            else if perfect >= 30 {
+                fivePerfectCircles.percentComplete = 100
+                fifteenPerfectCircles.percentComplete = 100
+                thirtyPerfectCircles.percentComplete = 100
+                thirtyPerfectCircles.showsCompletionBanner = true
+            }
+            
+            var achievements: [GKAchievement] = [fivePerfectCircles, fifteenPerfectCircles, thirtyPerfectCircles]
+            
+            GKAchievement.reportAchievements(achievements, withCompletionHandler:  {(var error:NSError!) -> Void in
+                if error != nil {
+                    println("Couldn't save achievement progress.")
+                }
+            })
+        }
+    }
+    
+    func checkPerfectInRowAchievements(perfect:Int) {
+        if GKLocalPlayer.localPlayer().authenticated {
+            
+            var fiveInARow = GKAchievement(identifier: "fiveInARow")
+            
+            if perfect >= 5 {
+                fiveInARow.percentComplete = 100
+                fiveInARow.showsCompletionBanner = true
+            }
+            
+            GKAchievement.reportAchievements([fiveInARow], withCompletionHandler:  {(var error:NSError!) -> Void in
+                if error != nil {
+                    println("Couldn't save achievement progress.")
+                }
+            })
+        }
+    }
+    
+    
     
     //show leaderboard
     func showLeader() {

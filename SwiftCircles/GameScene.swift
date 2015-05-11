@@ -23,7 +23,10 @@ class GameScene: SKScene {
     //perfection bonus support
     var perfectLabel = SKLabelNode()
     var wasPerfect = false
+    var wasPreviouslyPerfect = false
     var perfectFills = 0
+    var concurrentPerfectFills = 0
+    var hiConcurrentPerfectFills = 0
 
     //hiscore support
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -106,9 +109,20 @@ class GameScene: SKScene {
         //update score
         if (wasPerfect) {
             perfectFills++
+            if wasPreviouslyPerfect || hiConcurrentPerfectFills == 0 {
+                concurrentPerfectFills++
+                if (concurrentPerfectFills > hiConcurrentPerfectFills) {
+                    hiConcurrentPerfectFills = concurrentPerfectFills
+                }
+            }
             perfectLabel.alpha = 1
             perfectLabel.runAction(SKAction.fadeOutWithDuration(PERFECT_MESSAGE_FADE_TIME))
             wasPerfect = false
+            wasPreviouslyPerfect = true
+        }
+        else {
+            wasPreviouslyPerfect = false
+            concurrentPerfectFills = 0
         }
         
         deltaLabel.text = String(format: "%.1f", delta)
@@ -129,6 +143,7 @@ class GameScene: SKScene {
         //save current score
         defaults.setObject(String(format: "%i", circleScore), forKey: CURRENT_SCORE_KEY)
         defaults.setObject(String(format: "%i", perfectFills), forKey: PERFECT_FILLS_KEY)
+        defaults.setObject(String(format: "%i", hiConcurrentPerfectFills), forKey: CONCURRENT_PERFECT_FILLS_KEY)
         
         //get score and hiscore
         if var hiScore = defaults.stringForKey(HI_SCORE_KEY) {

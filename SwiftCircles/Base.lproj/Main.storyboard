@@ -315,9 +315,19 @@
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-CQ-Xu4">
+                                <rect key="frame" x="140" y="550" width="320" height="50"/>
+                            </adBannerView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="DaF-CQ-Xu4" secondAttribute="centerX" id="L6K-UU-g6i"/>
+                            <constraint firstItem="khH-OB-KpY" firstAttribute="top" secondItem="DaF-CQ-Xu4" secondAttribute="bottom" id="Umb-qY-7yW"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="adBannerView" destination="DaF-CQ-Xu4" id="Wwh-4K-0Gi"/>
                         <segue destination="Wso-yG-vdb" kind="show" identifier="endGameSegue" id="BWl-Es-fol"/>
                     </connections>
                 </viewController>

@@ -32,4 +32,4 @@ public let CURRENT_SCORE_KEY = "circlesCurrentScore"
 public let PERFECT_FILLS_KEY = "perfectFillScore"
 public let CONCURRENT_PERFECT_FILLS_KEY = "concurrentPerfectFillScore"
 
-public let BANNER_AD_HEIGHT = 50
+public let BANNER_AD_HEIGHT = 66

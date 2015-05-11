@@ -26,14 +26,24 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, ADBannerViewDelegate {
 
+    @IBOutlet weak var adBannerView: ADBannerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //support for banner ads
+        self.canDisplayBannerAds = true
+        self.adBannerView?.delegate = self
+        self.adBannerView?.hidden = true
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-
+    
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.b
+            // Configure the view
             let skView = self.originalContentView as! SKView
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
@@ -46,10 +56,32 @@ class GameViewController: UIViewController {
             scene.viewController = self
             
             skView.presentScene(scene)
-            
-            //enable ads
-            self.canDisplayBannerAds = true
         }
+    }
+    
+    //banner add support
+    
+    func bannerViewWillLoadAd(banner: ADBannerView!) {
+        
+    }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        //add banner view if it's not there
+        println("Succesfully retrieved ad")
+        self.adBannerView.hidden = false
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        return true
+    }
+    
+    func bannerViewActionDidFinish(banner: ADBannerView!) {
+        
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        println("Failed to receive ad")
+        self.adBannerView.hidden = true
     }
     
     //interstitial add support

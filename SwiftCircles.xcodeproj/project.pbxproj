@@ -35,6 +35,7 @@
 		876CA7011AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CA7001AFBBA3000BEBF7B /* InstructionsPageTwoViewController.swift */; };
 		876D20FD1AF8F3A800B91ECF /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FC1AF8F3A800B91ECF /* GameCircle.swift */; };
 		876D20FF1AF9480D00B91ECF /* CirclesProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */; };
+		8774C58A1B010029004683C5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8774C5891B010029004683C5 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		876D20FC1AF8F3A800B91ECF /* GameCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
 		876D20FE1AF9480D00B91ECF /* CirclesProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesProgressBar.swift; sourceTree = "<group>"; };
 		876D21031AF958DD00B91ECF /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndGameViewController.swift; path = SwiftCircles/EndGameViewController.swift; sourceTree = SOURCE_ROOT; };
+		8774C5891B010029004683C5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8774C58A1B010029004683C5 /* AdSupport.framework in Frameworks */,
 				87091AAE1AFAA42D00432220 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +126,7 @@
 		872014471AEEC4C6003F15A6 = {
 			isa = PBXGroup;
 			children = (
+				8774C5891B010029004683C5 /* AdSupport.framework */,
 				87091AAD1AFAA42D00432220 /* iAd.framework */,
 				872014521AEEC4C7003F15A6 /* SwiftCircles */,
 				8720146C1AEEC4C7003F15A6 /* SwiftCirclesTests */,

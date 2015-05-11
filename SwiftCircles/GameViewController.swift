@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-    
+        
         self.skView = self.originalContentView as! SKView
         if self.skView.scene == nil {
             if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {

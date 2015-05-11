@@ -58,7 +58,6 @@ class GameScene: SKScene {
         perfectLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.height - 90)
         perfectLabel.alpha = 0  //makes it transparent
         self.addChild(perfectLabel)
-        
     }
    
     override func update(currentTime: CFTimeInterval) {
@@ -164,10 +163,5 @@ class GameScene: SKScene {
         
         //display results page
         self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)
-    }
-    
-    //collision
-    func didBeginContact(contact: SKPhysicsContact) {
-        println("collision")
     }
 }

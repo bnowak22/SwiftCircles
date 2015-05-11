@@ -158,6 +158,11 @@ class GameScene: SKScene {
             defaults.setObject(String(format: "%i", circleScore), forKey: HI_SCORE_KEY)
         }
         
+        //break down scene
+        self.removeAllChildren()
+        self.removeFromParent()
+        self.view?.presentScene(nil)
+        
         //display results page
         self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)
     }

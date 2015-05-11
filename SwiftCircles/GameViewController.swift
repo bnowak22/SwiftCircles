@@ -36,26 +36,30 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         //support for banner ads
         self.canDisplayBannerAds = true
         self.adBannerView?.delegate = self
-        self.adBannerView?.hidden = true
+        self.adBannerView?.alpha = 0
+        self.adBannerView.layer.zPosition = 2
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
     
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view
-            let skView = self.originalContentView as! SKView
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.size = skView.bounds.size
-            scene.scaleMode = .AspectFill
-            
-            scene.viewController = self
-            
-            skView.presentScene(scene)
+        let skView = self.originalContentView as! SKView
+        if skView.scene == nil {
+            if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+                // Configure the view
+                let skView = self.originalContentView as! SKView
+                
+                /* Sprite Kit applies additional optimizations to improve rendering performance */
+                skView.ignoresSiblingOrder = true
+                
+                /* Set the scale mode to scale to fit the window */
+                scene.size = skView.bounds.size
+                scene.scaleMode = .AspectFill
+                
+                scene.viewController = self
+                
+                skView.presentScene(scene)
+            }
         }
     }
     
@@ -68,7 +72,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     func bannerViewDidLoadAd(banner: ADBannerView!) {
         //add banner view if it's not there
         println("Succesfully retrieved ad")
-        self.adBannerView.hidden = false
+        self.adBannerView.alpha = 1
     }
     
     func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
@@ -81,7 +85,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
         println("Failed to receive ad")
-        self.adBannerView.hidden = true
+        self.adBannerView.alpha = 0
     }
     
     //interstitial add support

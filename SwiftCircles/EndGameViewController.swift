@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import GameKit
+import iAd
 
-class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
+class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, ADBannerViewDelegate {
     
     @IBOutlet weak var yourScoreLabel: UILabel!
     @IBOutlet weak var perfectFillsLabel: UILabel!
@@ -21,6 +22,8 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
+    @IBOutlet weak var adBannerView: ADBannerView!
+    
     var current = 0
     var perfect = 0
     var hi = 0
@@ -28,8 +31,16 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
         //set background color
         self.view.backgroundColor = MENU_BACKGROUND_COLOR
+        
+        //banner ad support
+        self.canDisplayBannerAds = true
+        self.adBannerView.layer.zPosition = 5
+        self.adBannerView.delegate = self
+        self.adBannerView.hidden = true
         
         //set label values
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -86,7 +97,6 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
         playAgainButton.addTarget(self, action: "restartGame", forControlEvents: UIControlEvents.TouchUpInside)
         menuButton.addTarget(self, action: "showMenu", forControlEvents: UIControlEvents.TouchUpInside)
         leaderboardButton.addTarget(self, action: "showLeader", forControlEvents: UIControlEvents.TouchUpInside)
-        
         
     }
     
@@ -151,8 +161,6 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
                 }
             })
         }
-        
-
     }
     
     func checkPerfectFilledAchievements(perfect:Int) {
@@ -207,8 +215,6 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
     
-    
-    
     //show leaderboard
     func showLeader() {
         var vc = self
@@ -220,5 +226,24 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate {
     //hide leaderboard
     func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //banner ad delegate methods
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        println("Loaded ad.")
+        self.adBannerView.hidden = false
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        return true
+    }
+    
+    func bannerViewActionDidFinish(banner: ADBannerView!) {
+        
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        println("Failed to load ad")
+        self.adBannerView.hidden = true
     }
 }

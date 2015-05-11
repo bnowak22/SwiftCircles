@@ -161,7 +161,6 @@ class GameScene: SKScene {
         self.removeAllChildren()
         self.removeFromParent()
         self.view?.presentScene(nil)
-        viewController?.adBannerView.hidden = true
         
         //display results page
         self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)

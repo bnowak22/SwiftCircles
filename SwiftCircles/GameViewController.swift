@@ -26,20 +26,9 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController, ADBannerViewDelegate {
+class GameViewController: UIViewController {
 
-    @IBOutlet weak var adBannerView: ADBannerView!
     var skView = SKView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //support for banner ads
-        self.canDisplayBannerAds = true
-        self.adBannerView?.delegate = self
-        self.adBannerView?.hidden = true
-        self.adBannerView.layer.zPosition = 5
-    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -62,34 +51,6 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
                 self.skView.presentScene(scene)
             }
         }
-    }
-    
-    //banner add support
-    
-    func bannerViewWillLoadAd(banner: ADBannerView!) {
-        
-    }
-    
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        //add banner view if it's not there
-        println("Succesfully retrieved ad")
-        self.adBannerView.hidden = false
-    }
-    
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        println("Pausing...")
-        self.skView.scene?.view?.paused = true
-        return true
-    }
-    
-    func bannerViewActionDidFinish(banner: ADBannerView!) {
-        println("Unpausing...")
-        self.skView.scene?.view?.paused = false
-    }
-    
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        println("Failed to receive ad")
-        self.adBannerView.hidden = true
     }
     
     //interstitial add support

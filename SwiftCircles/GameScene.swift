@@ -158,8 +158,6 @@ class GameScene: SKScene {
         
         //break down scene
         self.removeAllChildren()
-        self.removeFromParent()
-        self.view?.presentScene(nil)
         
         //display results page
         self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)

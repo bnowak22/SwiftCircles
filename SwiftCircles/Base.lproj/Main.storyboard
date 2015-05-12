@@ -518,7 +518,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rse-en-dyr"/>
         <segue reference="vVu-Dt-4hJ"/>
+        <segue reference="Rse-en-dyr"/>
     </inferredMetricsTieBreakers>
 </document>

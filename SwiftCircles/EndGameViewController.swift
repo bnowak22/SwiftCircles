@@ -39,6 +39,9 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
         //set background color
         self.view.backgroundColor = MENU_BACKGROUND_COLOR
         
+        //interstitial ad support
+        self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
+        
         //banner ad support
         self.canDisplayBannerAds = true
         self.adBannerView.layer.zPosition = 5

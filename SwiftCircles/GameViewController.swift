@@ -77,11 +77,10 @@ class GameViewController: UIViewController {
         }
     }
     
-    //interstitial add support
+    //memory clean-up
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "endGameSegue" {
-            let destination = segue.destinationViewController as! UIViewController
-            destination.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
+            self.skView.presentScene(nil)
         }
     }
 

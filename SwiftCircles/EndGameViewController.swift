@@ -11,6 +11,9 @@ import UIKit
 import GameKit
 import iAd
 
+//BUG:  Transition to GameScene, bar filled, score 0, no circles
+//REPRODUCE: Tap interstitial ad, second add shows up, close this add and the bug occurs
+
 class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, ADBannerViewDelegate {
     
     @IBOutlet weak var yourScoreLabel: UILabel!

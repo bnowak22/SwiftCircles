@@ -34,7 +34,7 @@ class InstructionsPageTwoViewController: UIViewController {
     }
     
     func showMenu() {
-        self.performSegueWithIdentifier("showMenuSegue", sender: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func playGame() {

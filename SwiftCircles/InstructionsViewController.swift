@@ -34,7 +34,7 @@ class InstructionsViewController: UIViewController {
     }
     
     func showMenu() {
-        self.performSegueWithIdentifier("showMenuSegue", sender: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func nextInstruction() {

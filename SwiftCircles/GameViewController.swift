@@ -8,7 +8,6 @@
 
 import UIKit
 import SpriteKit
-import iAd
 
 extension SKNode {
     class func unarchiveFromFile(file : String) -> SKNode? {
@@ -33,13 +32,11 @@ class GameViewController: UIViewController {
     
     var skView = SKView()
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
+    override func viewWillAppear(animated: Bool) {
         //setup pause button
         pauseButton.image = UIImage(named: "pause.png")
         pauseButton.userInteractionEnabled = true
-        var pauseGesture = UITapGestureRecognizer(target: self, action: "pauseGame")
+        var pauseGesture = UITapGestureRecognizer(target: self, action: "togglePause")
         pauseButton.addGestureRecognizer(pauseGesture)
         
         //present scene
@@ -64,7 +61,7 @@ class GameViewController: UIViewController {
     }
     
     //pause game
-    func pauseGame() {
+    func togglePause() {
         if isPaused {
             pauseButton.image = UIImage(named: "pause.png")
             skView.scene!.view!.paused = false
@@ -80,6 +77,7 @@ class GameViewController: UIViewController {
     //memory clean-up
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "endGameSegue" {
+            self.skView.scene?.removeAllChildren()
             self.skView.presentScene(nil)
         }
     }

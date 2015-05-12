@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vjD-Na-Rd9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gzZ-eX-o8d">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -40,7 +40,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circle Stuff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-aJ-QGQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Circle Stuff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-aJ-QGQ">
                                 <rect key="frame" x="16" y="20" width="568" height="129"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="129" id="pvM-rG-Vsg"/>
@@ -49,7 +49,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Ben Nowak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJR-8y-ipW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="by Ben Nowak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJR-8y-ipW">
                                 <rect key="frame" x="197" y="114" width="207" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KPb-J7-sHn"/>
@@ -59,7 +59,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dy-GY-xZF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dy-GY-xZF">
                                 <rect key="frame" x="149" y="188" width="302" height="223"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="302" id="Uql-V1-5im"/>
@@ -84,6 +84,7 @@
                             <constraint firstAttribute="centerX" secondItem="g90-ba-2yv" secondAttribute="centerX" constant="-0.5" id="v8u-Yz-K19"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="de1-YB-SZm"/>
                     <connections>
                         <outlet property="circleImageView" destination="4dy-GY-xZF" id="VIV-jv-tY0"/>
                         <outlet property="instructionsButton" destination="9Rk-dv-ap7" id="S0u-88-T05"/>
@@ -94,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kw6-5V-ZSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462" y="298"/>
+            <point key="canvasLocation" x="350" y="298"/>
         </scene>
         <!--Instructions View Controller-->
         <scene sceneID="Ocx-99-yb4">
@@ -195,7 +196,6 @@
                         <outlet property="circleImageView" destination="1Q1-2F-M7b" id="WZx-ZU-aN7"/>
                         <outlet property="menuButton" destination="3mf-eI-3gT" id="bNg-L7-Paq"/>
                         <outlet property="nextButton" destination="ScB-s2-pZC" id="Eph-0Q-RTQ"/>
-                        <segue destination="vjD-Na-Rd9" kind="show" identifier="showMenuSegue" id="MxB-tk-TRr"/>
                         <segue destination="YSE-SD-9yu" kind="show" identifier="showNextInstructionSegue" id="M92-du-hgH"/>
                     </connections>
                 </viewController>
@@ -296,7 +296,6 @@
                         <outlet property="menuButton" destination="Fz2-lf-HAV" id="ss4-2X-zyz"/>
                         <outlet property="playButton" destination="MWp-gn-fcg" id="RpB-UI-ypO"/>
                         <outlet property="scoringImageView" destination="D8g-Ya-cc1" id="dRK-O4-lkK"/>
-                        <segue destination="vjD-Na-Rd9" kind="show" identifier="showMenuSegue" id="4LC-eD-kh3"/>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="playGameSegue" id="1og-iW-5dw"/>
                     </connections>
                 </viewController>
@@ -337,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="298"/>
+            <point key="canvasLocation" x="1141" y="298"/>
         </scene>
         <!--End Game View Controller-->
         <scene sceneID="IWw-yw-D11">
@@ -508,17 +507,32 @@
                         <outlet property="perfectFillsLabel" destination="YjI-Yg-oBk" id="GmV-ze-g8G"/>
                         <outlet property="playAgainButton" destination="Zt4-3R-hud" id="b4Q-GG-v8V"/>
                         <outlet property="yourScoreLabel" destination="Cd4-ol-FIu" id="ZEU-Nv-Jsf"/>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="restartGameSegue" id="Rse-en-dyr"/>
-                        <segue destination="vjD-Na-Rd9" kind="show" identifier="showMenuSegue" id="vVu-Dt-4hJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s14-X1-5tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="298"/>
+            <point key="canvasLocation" x="1912" y="298"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f6I-GL-AMc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gzZ-eX-o8d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cch-ap-Sek">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vjD-Na-Rd9" kind="relationship" relationship="rootViewController" id="xqw-c1-bqn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbd-DT-8sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="298"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vVu-Dt-4hJ"/>
-        <segue reference="Rse-en-dyr"/>
+        <segue reference="2sR-8Q-q8a"/>
     </inferredMetricsTieBreakers>
 </document>

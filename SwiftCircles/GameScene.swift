@@ -130,7 +130,6 @@ class GameScene: SKScene {
         
         //check for end game
         if (delta > 100) {
-            self.scene!.view?.paused = true
             shouldDrawCircle = false
             endGame()
         }
@@ -155,9 +154,6 @@ class GameScene: SKScene {
         else {
             defaults.setObject(String(format: "%i", circleScore), forKey: HI_SCORE_KEY)
         }
-        
-        //break down scene
-        self.removeAllChildren()
         
         //display results page
         self.viewController!.performSegueWithIdentifier("endGameSegue", sender: nil)

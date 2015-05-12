@@ -34,7 +34,7 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
     
     override func viewDidLoad() {
         
-        super.viewDidLoad()
+        //super.viewDidLoad()
         
         //set background color
         self.view.backgroundColor = MENU_BACKGROUND_COLOR
@@ -43,7 +43,7 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
         self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
         
         //banner ad support
-        self.canDisplayBannerAds = true
+        self.canDisplayBannerAds = false
         self.adBannerView.layer.zPosition = 5
         self.adBannerView.delegate = self
         self.adBannerView.hidden = true
@@ -108,11 +108,12 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
     
     func restartGame() {
         println("Reloading game...")
-        self.performSegueWithIdentifier("restartGameSegue", sender: nil)
+        self.canDisplayBannerAds = false
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func showMenu() {
-        self.performSegueWithIdentifier("showMenuSegue", sender: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     //save hi score to leaderboard

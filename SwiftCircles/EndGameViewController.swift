@@ -31,7 +31,7 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
     
     override func viewDidLoad() {
         
-        //super.viewDidLoad()
+        super.viewDidLoad()
         
         //set background color
         self.view.backgroundColor = MENU_BACKGROUND_COLOR
@@ -40,8 +40,6 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
         self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
         
         //banner ad support
-        self.canDisplayBannerAds = true
-        self.adBannerView.layer.zPosition = 5
         self.adBannerView.delegate = self
         self.adBannerView.hidden = true
         
@@ -234,19 +232,11 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
     //banner ad delegate methods
     func bannerViewDidLoadAd(banner: ADBannerView!) {
         println("Loaded ad.")
-        self.adBannerView.hidden = false
-    }
-    
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        return true
-    }
-    
-    func bannerViewActionDidFinish(banner: ADBannerView!) {
-        
+        banner.hidden = false
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
         println("Failed to load ad")
-        self.adBannerView.hidden = true
+        banner.hidden = true
     }
 }

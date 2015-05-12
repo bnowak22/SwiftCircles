@@ -41,22 +41,20 @@ class GameViewController: UIViewController {
         
         //present scene
         self.skView = self.originalContentView as! SKView
-        if self.skView.scene == nil {
-            if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-                // Configure the view
-                self.skView = self.originalContentView as! SKView
-                
-                /* Sprite Kit applies additional optimizations to improve rendering performance */
-                self.skView.ignoresSiblingOrder = true
-                
-                /* Set the scale mode to scale to fit the window */
-                scene.size = skView.bounds.size
-                scene.scaleMode = .AspectFill
-                
-                scene.viewController = self
-                
-                self.skView.presentScene(scene)
-            }
+        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+            // Configure the view
+            self.skView = self.originalContentView as! SKView
+            
+            /* Sprite Kit applies additional optimizations to improve rendering performance */
+            self.skView.ignoresSiblingOrder = true
+            
+            /* Set the scale mode to scale to fit the window */
+            scene.size = skView.bounds.size
+            scene.scaleMode = .AspectFill
+            
+            scene.viewController = self
+            
+            self.skView.presentScene(scene)
         }
     }
     
@@ -64,12 +62,20 @@ class GameViewController: UIViewController {
     func togglePause() {
         if isPaused {
             pauseButton.image = UIImage(named: "pause.png")
-            skView.scene!.view!.paused = false
+            var currentScene = skView.scene as! GameScene
+            currentScene.view!.paused = false
+            for circle in currentScene.circles {
+                circle.userInteractionEnabled = true
+            }
             isPaused = false
         }
         else {
             pauseButton.image = UIImage(named: "play.png")
-            skView.scene!.view!.paused = true
+            var currentScene = skView.scene as! GameScene
+            currentScene.view!.paused = true
+            for circle in currentScene.circles {
+                circle.userInteractionEnabled = false
+            }
             isPaused = true
         }
     }

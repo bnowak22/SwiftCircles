@@ -11,9 +11,6 @@ import UIKit
 import GameKit
 import iAd
 
-//BUG:  Transition to GameScene, bar filled, score 0, no circles
-//REPRODUCE: Tap interstitial ad, second add shows up, close this add and the bug occurs
-
 class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, ADBannerViewDelegate {
     
     @IBOutlet weak var yourScoreLabel: UILabel!
@@ -43,7 +40,7 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
         self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
         
         //banner ad support
-        self.canDisplayBannerAds = false
+        self.canDisplayBannerAds = true
         self.adBannerView.layer.zPosition = 5
         self.adBannerView.delegate = self
         self.adBannerView.hidden = true
@@ -108,7 +105,6 @@ class EndGameViewController: UIViewController, GKGameCenterControllerDelegate, A
     
     func restartGame() {
         println("Reloading game...")
-        self.canDisplayBannerAds = false
         self.navigationController?.popViewControllerAnimated(true)
     }
     

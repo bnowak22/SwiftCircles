@@ -315,9 +315,23 @@
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJ3-kk-Vxo">
+                                <rect key="frame" x="560" y="560" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Rf-fh-M2y"/>
+                                    <constraint firstAttribute="width" constant="40" id="b3n-Pf-9SY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pJ3-kk-Vxo" secondAttribute="trailing" constant="-16" id="I88-7Z-G7L"/>
+                            <constraint firstItem="khH-OB-KpY" firstAttribute="top" secondItem="pJ3-kk-Vxo" secondAttribute="bottom" id="gz7-Wr-rdj"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="pauseButton" destination="pJ3-kk-Vxo" id="CPJ-9L-YUl"/>
                         <segue destination="Wso-yG-vdb" kind="show" identifier="endGameSegue" id="BWl-Es-fol"/>
                     </connections>
                 </viewController>

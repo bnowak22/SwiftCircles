@@ -28,11 +28,21 @@ extension SKNode {
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var pauseButton: UIImageView!
+    var isPaused = false
+    
     var skView = SKView()
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
+        //setup pause button
+        pauseButton.image = UIImage(named: "pause.png")
+        pauseButton.userInteractionEnabled = true
+        var pauseGesture = UITapGestureRecognizer(target: self, action: "pauseGame")
+        pauseButton.addGestureRecognizer(pauseGesture)
+        
+        //present scene
         self.skView = self.originalContentView as! SKView
         if self.skView.scene == nil {
             if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
@@ -50,6 +60,20 @@ class GameViewController: UIViewController {
                 
                 self.skView.presentScene(scene)
             }
+        }
+    }
+    
+    //pause game
+    func pauseGame() {
+        if isPaused {
+            pauseButton.image = UIImage(named: "pause.png")
+            skView.scene!.view!.paused = false
+            isPaused = false
+        }
+        else {
+            pauseButton.image = UIImage(named: "play.png")
+            skView.scene!.view!.paused = true
+            isPaused = true
         }
     }
     
